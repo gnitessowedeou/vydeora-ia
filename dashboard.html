@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#080B11">
+  <meta name="description" content="VYDEORA — Créez et éditez des vidéos époustouflantes avec l'IA sans compétences techniques. Studio de création vidéo tout-en-un.">
+  <title>VYDEORA — Studio de Création Vidéo IA</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Design System -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/views.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- App Main Container -->
+  <div class="app-container">
+
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- ======================================================================
+         SIDEBAR (DESKTOP FIXED & MOBILE SLIDE-OVER DRAWER)
+         ====================================================================== -->
+    <aside class="app-sidebar" id="appSidebar">
+      <div class="sidebar-header">
+        <a href="#accueil" class="sidebar-logo" data-view="view-accueil">
+          <div class="logo-icon-wrap">
+            <img src="assets/images/logo-icon.png" alt="VYDEORA Logo" width="38" height="38">
+          </div>
+          <span class="brand-text">VYDEORA</span>
+        </a>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Fermer le menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#accueil" class="nav-link active" data-view="view-accueil">
+          <svg viewBox="0 0 24 24" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Accueil</span>
+        </a>
+        <a href="#studio" class="nav-link" data-view="view-studio">
+          <svg viewBox="0 0 24 24" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+          <span>Créer une vidéo</span>
+          <span class="nav-badge">IA</span>
+        </a>
+        <a href="#projets" class="nav-link" data-view="view-projects">
+          <svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          <span>Mes projets</span>
+        </a>
+        <a href="#modeles" class="nav-link" data-view="view-templates">
+          <svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Modèles</span>
+        </a>
+        <a href="#mediatheque" class="nav-link" data-view="view-media">
+          <svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+          <span>Médiathèque</span>
+        </a>
+        <a href="#voix" class="nav-link" data-view="view-voices">
+          <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+          <span>Voix IA</span>
+        </a>
+        <a href="#utilisation" class="nav-link" data-view="view-analytics">
+          <svg viewBox="0 0 24 24" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Utilisation</span>
+        </a>
+        <a href="#abonnement" class="nav-link" data-view="view-billing">
+          <svg viewBox="0 0 24 24" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          <span>Mon abonnement</span>
+        </a>
+        <a href="#parametres" class="nav-link" data-view="view-settings">
+          <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Paramètres</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#aide" class="nav-link" data-view="view-help">
+          <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          <span>Aide & support</span>
+        </a>
+
+        <!-- User Profile Card -->
+        <div class="user-profile-badge" id="sidebarUserProfileBtn" data-view="view-settings" style="cursor:pointer;" title="Accéder aux paramètres">
+          <div class="user-avatar-circle" id="sidebarUserAvatar">AM</div>
+          <div class="user-profile-info">
+            <span class="user-profile-name" id="sidebarUserName">Alex Martin</span>
+            <span class="user-profile-email" id="sidebarUserEmail">alex@vydeora.com</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN CONTENT AREA & TOPBAR
+         ====================================================================== -->
+    <main class="app-main">
+      
+      <!-- Top Navigation Bar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <!-- Mobile Hamburger Toggle -->
+          <button class="hamburger-btn" id="hamburgerBtn" aria-label="Ouvrir le menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+
+          <!-- Mobile Brand Logo -->
+          <div class="topbar-mobile-logo" style="display:none; align-items:center; gap:8px;">
+            <img src="assets/images/logo-icon.png" alt="VYDEORA" width="28" height="28">
+            <span style="font-weight:800; font-size:1.1rem; color:#FFFFFF; letter-spacing:0.04em;">VYDEORA</span>
+          </div>
+
+          <!-- Search Input with Ctrl + K Badge -->
+          <div class="topbar-search-box" id="topbarSearchBox">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" class="topbar-search-input" placeholder="Rechercher un projet, une vidéo, un modèle..." readonly>
+            <span class="kbd-shortcut">Ctrl + K</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Mobile Search Trigger Button -->
+          <button class="icon-btn topbar-search-mobile-btn" id="mobileSearchBtn" style="display:none;" aria-label="Rechercher">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+
+
+          <!-- Notifications Bell -->
+          <button class="icon-btn" id="notificationBtn" aria-label="Notifications">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notification-badge-dot"></span>
+          </button>
+
+          <!-- Topbar Avatar with Dropdown -->
+          <div class="user-dropdown-wrap">
+            <div class="topbar-user" id="topbarUserDropdown" style="cursor:pointer;" aria-label="Menu utilisateur">
+              <div class="user-avatar-circle" id="topbarUserAvatar" style="width:34px; height:34px; font-size:0.8rem;">AM</div>
+              <span class="topbar-user-name" id="topbarUserName">Alex Martin</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:2px; color:var(--text-muted);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="user-dropdown-menu" id="topbarDropdownMenu">
+              <div style="padding:8px 12px; border-bottom:1px solid var(--border-subtle); margin-bottom:4px;">
+                <div style="font-weight:700; font-size:0.88rem; color:#FFFFFF;" id="menuDropdownName">Alex Martin</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);" id="menuDropdownEmail">alex@vydeora.com</div>
+              </div>
+              <button class="dropdown-item" data-view="view-settings">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                <span>Paramètres du profil</span>
+              </button>
+              <button class="dropdown-item" data-view="view-projects">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect></svg>
+                <span>Mes projets</span>
+              </button>
+              <button class="dropdown-item" data-view="view-billing">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                <span>Abonnement & Crédits</span>
+              </button>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item danger" id="logoutBtnTopbar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                <span>Se déconnecter</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ====================================================================
+           VIEWPORT CONTAINER (MULTI-VIEW SINGLE PAGE ARCHITECTURE)
+           ==================================================================== -->
+      <div class="view-viewport">
+
+        <!-- ==================================================================
+             VIEW 1: ACCUEIL (DASHBOARD — EXACT SCREENSHOT RECREATION)
+             ================================================================== -->
+        <section class="app-view active" id="view-accueil">
+          <div class="dashboard-grid">
+
+            <!-- 1. Hero Banner & Quick Actions -->
+            <div class="hero-row">
+              <div class="hero-banner">
+                <div class="hero-content">
+                  <div class="hero-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    <span>L'IA au service de votre créativité</span>
+                  </div>
+                  <h1 class="hero-title">Bonjour <span id="homeUserFirstName">Créateur</span> 👋, créez votre prochaine vidéo avec l'IA !</h1>
+                  <p class="hero-subtitle">Transformez vos idées, vos textes ou vos scripts en vidéos professionnelles en quelques minutes.</p>
+
+                  <!-- Prompt input box -->
+                  <div class="hero-prompt-box">
+                    <svg class="hero-prompt-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                    </svg>
+                    <input type="text" class="hero-prompt-input" id="heroPromptInput" placeholder="Décrivez votre idée de vidéo... Exemple : Crée une vidéo de 60 secondes sur les 5 meilleurs conseils pour réussir sur TikTok.">
+                    <button class="hero-prompt-btn" id="heroPromptBtn">
+                      <span>Générer ma vidéo</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </button>
+                  </div>
+
+                  <!-- Chips: Script IA, Voix IA, Images IA, Sous-titres, Musique -->
+                  <div class="hero-chips-wrap">
+                    <div class="hero-chip">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                      <span>Script IA</span>
+                    </div>
+                    <div class="hero-chip">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path></svg>
+                      <span>Voix IA</span>
+                    </div>
+                    <div class="hero-chip">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle></svg>
+                      <span>Images IA</span>
+                    </div>
+                    <div class="hero-chip">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="6" y1="15" x2="18" y2="15"></line></svg>
+                      <span>Sous-titres</span>
+                    </div>
+                    <div class="hero-chip">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                      <span>Musique</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3D Laptop Preview Illustration -->
+                <div class="hero-media-wrap">
+                  <img src="assets/images/hero-laptop.jpg" alt="Aperçu vidéo IA sur ordinateur" class="hero-laptop-img" width="380" height="214" loading="eager">
+                </div>
+              </div>
+
+              <!-- Top Right: Créer à partir de : -->
+              <div class="quick-start-card">
+                <div class="quick-start-title">Créer à partir de :</div>
+                <div class="quick-start-list">
+                  <div class="quick-start-item" data-quick-action="Une idée">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    <span>Une idée</span>
+                  </div>
+                  <div class="quick-start-item" data-quick-action="Un script">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    <span>Un script</span>
+                  </div>
+                  <div class="quick-start-item" data-quick-action="Un modèle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Un modèle</span>
+                  </div>
+                  <div class="quick-start-item" data-quick-action="Des images">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    <span>Des images</span>
+                  </div>
+                  <div class="quick-start-item" data-quick-action="Une vidéo existante">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                    <span>Une vidéo existante</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Section "Votre activité" — 5 Statistics Cards -->
+            <div class="stats-section">
+              <div class="stats-section-header">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--primary-light)">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+                <span>Votre activité</span>
+              </div>
+              <div class="stats-grid">
+                <!-- Card 1 -->
+                <div class="stat-card">
+                  <div class="stat-icon-wrap purple">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                    </svg>
+                  </div>
+                  <div class="stat-label">Vidéos créées</div>
+                  <div class="stat-value" id="statVideosCount">0</div>
+                  <div class="stat-trend" id="statVideosTrend">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                    <span>Vos créations réelles</span>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="stat-card">
+                  <div class="stat-icon-wrap blue">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                  </div>
+                  <div class="stat-label">Minutes générées</div>
+                  <div class="stat-value" id="statMinutesCount">0 min</div>
+                  <div class="stat-trend" id="statMinutesTrend">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                    <span>Temps de rendu cumulé</span>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="stat-card">
+                  <div class="stat-icon-wrap green">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                  </div>
+                  <div class="stat-label">Crédits disponibles</div>
+                  <div class="stat-value" id="statCreditsCount">100 <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ 100</span></div>
+                  <div class="credits-progress-bar">
+                    <div class="credits-progress-fill" id="statCreditsFill" style="width:100%;"></div>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="stat-card">
+                  <div class="stat-icon-wrap amber">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                  </div>
+                  <div class="stat-label">Projets en cours</div>
+                  <div class="stat-value" id="statPendingCount">0</div>
+                  <div class="stat-trend" id="statPendingTrend">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                    <span>Générations actives</span>
+                  </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="stat-card">
+                  <div class="stat-icon-wrap cyan">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                  </div>
+                  <div class="stat-label">Temps économisé</div>
+                  <div class="stat-value" id="statSavedTime">0 h</div>
+                  <div class="stat-trend" id="statSavedTrend">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                    <span>Gain estimé via l'IA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Dashboard Content Split (Recent Projects Table + Right Side) -->
+            <div class="dashboard-content-split">
+              
+              <!-- Left Column: Recent Projects Table & Fast Generator -->
+              <div class="left-dashboard-col">
+                <div class="card mobile-table-card-view">
+                  <div class="card-header">
+                    <div class="card-title">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--accent-purple)">
+                        <polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                      </svg>
+                      <span>Projets récents</span>
+                    </div>
+                    <a href="#projets" class="card-link" data-view="view-projects">
+                      <span>Voir tous mes projets</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                  </div>
+
+                  <div class="data-table-container">
+                    <table class="data-table">
+                      <thead>
+                        <tr>
+                          <th>Aperçu</th>
+                          <th>Titre</th>
+                          <th>Durée</th>
+                          <th>Statut</th>
+                          <th>Date</th>
+                          <th style="text-align:right;">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody id="recentProjectsTableBody">
+                        <!-- Populated dynamically per authenticated user -->
+                      </tbody>
+                    </table>
+                    
+                    <!-- Clean Empty State for New Users -->
+                    <div id="recentProjectsEmptyState" class="empty-state-box" style="display:none;">
+                      <div class="empty-state-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                      </div>
+                      <h4 class="empty-state-title">Aucun projet récent</h4>
+                      <p class="empty-state-desc">Vous n'avez pas encore créé de projet vidéo. Lancez notre Studio IA pour transformer votre première idée en vidéo.</p>
+                      <button class="btn btn-primary btn-sm" data-view="view-studio">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        <span>Créer ma première vidéo</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom Shortcuts: Générer plus rapidement -->
+                <div class="quick-generator-bar">
+                  <div class="quick-generator-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--primary-light)">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                    <span>Générer plus rapidement</span>
+                  </div>
+                  <div class="quick-generator-grid">
+                    <div class="quick-tool-card" data-view="view-voices">
+                      <div class="quick-tool-icon" style="background: rgba(168, 85, 247, 0.15); color: #C084FC;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path></svg>
+                      </div>
+                      <div class="quick-tool-info">
+                        <span class="quick-tool-name">Voix IA</span>
+                        <span class="quick-tool-desc">Des voix naturelles et réalistes</span>
+                      </div>
+                    </div>
+                    <div class="quick-tool-card" data-view="view-templates">
+                      <div class="quick-tool-icon" style="background: rgba(99, 102, 241, 0.15); color: #818CF8;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect></svg>
+                      </div>
+                      <div class="quick-tool-info">
+                        <span class="quick-tool-name">Modèles</span>
+                        <span class="quick-tool-desc">Des templates prêts à l'emploi</span>
+                      </div>
+                    </div>
+                    <div class="quick-tool-card" data-view="view-media">
+                      <div class="quick-tool-icon" style="background: rgba(16, 185, 129, 0.15); color: #34D399;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle></svg>
+                      </div>
+                      <div class="quick-tool-info">
+                        <span class="quick-tool-name">Médiathèque</span>
+                        <span class="quick-tool-desc">Vos images, vidéos, audios...</span>
+                      </div>
+                    </div>
+                    <div class="quick-tool-card" data-view="view-editor">
+                      <div class="quick-tool-icon" style="background: rgba(236, 72, 153, 0.15); color: #F472B6;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="6" y1="15" x2="18" y2="15"></line></svg>
+                      </div>
+                      <div class="quick-tool-info">
+                        <span class="quick-tool-name">Sous-titres</span>
+                        <span class="quick-tool-desc">Multilingues et personnalisables</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: Promotion Card & Popular Templates -->
+              <div class="right-dashboard-col">
+                
+                <!-- Promotional "Créer une vidéo avec l'IA" Card -->
+                <div class="ai-creator-promo-card">
+                  <div class="ai-creator-media">
+                    <img src="assets/images/creator-card.jpg" alt="Créatrice vidéo IA" width="300" height="140">
+                    <div class="ai-creator-play-overlay">
+                      <div class="play-circle-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 style="font-size:1.05rem; font-weight:700; color:#FFFFFF; margin-bottom:4px; display:flex; align-items:center; gap:6px;">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" color="var(--accent-pink)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                      <span>Créer une vidéo avec l'IA</span>
+                    </h3>
+                    <p style="font-size:0.82rem; color:var(--text-secondary); line-height:1.45;">Transformez une simple idée en une vidéo complète en quelques minutes.</p>
+                  </div>
+                  <div style="display:flex; flex-direction:column; gap:8px;">
+                    <button class="btn btn-primary" data-view="view-studio" style="width:100%; justify-content:center;">
+                      <span>Créer une vidéo</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                    <button class="btn btn-secondary" data-view="view-templates" style="width:100%; justify-content:center;">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect></svg>
+                      <span>Explorer les modèles</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Modèles populaires -->
+                <div class="popular-templates-card">
+                  <div class="card-header" style="margin-bottom:0;">
+                    <div class="card-title" style="font-size:0.95rem;">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--primary-light)"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect></svg>
+                      <span>Modèles populaires</span>
+                    </div>
+                    <a href="#modeles" class="card-link" data-view="view-templates">
+                      <span>Voir tous</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                  </div>
+                  
+                  <div class="templates-mini-grid">
+                    <!-- Template 1: Éducation -->
+                    <div class="template-mini-card" data-view="view-studio">
+                      <img src="assets/images/education.jpg" alt="Template Éducation" width="140" height="90">
+                      <div class="template-mini-label">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path></svg>
+                        <span>Éducation</span>
+                      </div>
+                    </div>
+                    <!-- Template 2: Business -->
+                    <div class="template-mini-card" data-view="view-studio">
+                      <img src="assets/images/business.jpg" alt="Template Business" width="140" height="90">
+                      <div class="template-mini-label">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        <span>Business</span>
+                      </div>
+                    </div>
+                    <!-- Template 3: Motivation -->
+                    <div class="template-mini-card" data-view="view-studio">
+                      <img src="assets/images/motivation.jpg" alt="Template Motivation" width="140" height="90">
+                      <div class="template-mini-label">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <span>Motivation</span>
+                      </div>
+                    </div>
+                    <!-- Template 4: TikTok -->
+                    <div class="template-mini-card" data-view="view-studio">
+                      <img src="assets/images/creator-card.jpg" alt="Template TikTok" width="140" height="90">
+                      <div class="template-mini-label">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                        <span>TikTok</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 2: STUDIO (CRÉER UNE VIDÉO — WIZARD MULTI-ÉTAPES)
+             ================================================================== -->
+        <section class="app-view" id="view-studio">
+          <div class="studio-container">
+            
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+              <div>
+                <h2>Studio de Création Vidéo IA</h2>
+                <p>Configurez les paramètres de votre vidéo intelligente en 5 étapes guidées.</p>
+              </div>
+              <button class="btn btn-secondary btn-sm" data-view="view-accueil">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                <span>Retour au tableau de bord</span>
+              </button>
+            </div>
+
+            <!-- Stepper Navigation Header -->
+            <div class="studio-stepper">
+              <div class="step-item active" data-step="1">
+                <div class="step-num">1</div>
+                <span class="step-label">Idée & Concept</span>
+              </div>
+              <div class="step-item" data-step="2">
+                <div class="step-num">2</div>
+                <span class="step-label">Script IA</span>
+              </div>
+              <div class="step-item" data-step="3">
+                <div class="step-num">3</div>
+                <span class="step-label">Voix & Langue</span>
+              </div>
+              <div class="step-item" data-step="4">
+                <div class="step-num">4</div>
+                <span class="step-label">Style Visuel</span>
+              </div>
+              <div class="step-item" data-step="5">
+                <div class="step-num">5</div>
+                <span class="step-label">Rendu Final</span>
+              </div>
+            </div>
+
+            <!-- Wizard Step Content Panes -->
+            <div class="studio-step-content">
+              
+              <!-- Step 1: Idée & Format -->
+              <div class="studio-step-pane" id="stepPane1">
+                <h3 style="margin-bottom:12px;">Étape 1 : Décrivez votre sujet de vidéo</h3>
+                <p style="margin-bottom:20px;">Indiquez le sujet principal, la cible ou collez un texte brut que notre IA doit transformer.</p>
+                
+                <div style="display:flex; flex-direction:column; gap:16px;">
+                  <div>
+                    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:8px;">Prompt de création ou idée :</label>
+                    <textarea id="studioPromptInput" rows="4" style="width:100%; padding:12px;" placeholder="Ex: 5 conseils infaillibles pour percer sur TikTok en 2026 avec une introduction dynamique et un appel à l'action percutant..."></textarea>
+                  </div>
+
+                  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px;">
+                    <div>
+                      <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:8px;">Format d'affichage :</label>
+                      <select style="width:100%; padding:10px;">
+                        <option value="9:16">Format vertical (9:16) — TikTok, Shorts, Reels</option>
+                        <option value="16:9">Format paysage (16:9) — YouTube, TV</option>
+                        <option value="1:1">Format carré (1:1) — Instagram, LinkedIn</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:8px;">Durée estimée :</label>
+                      <select style="width:100%; padding:10px;">
+                        <option value="30s">30 secondes (Court et percutant)</option>
+                        <option value="60s" selected>60 secondes (Idéal réseaux sociaux)</option>
+                        <option value="90s">90 secondes (Explicatif approfondi)</option>
+                        <option value="3m">3 minutes (Long format)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 2: Script IA Découpage -->
+              <div class="studio-step-pane" id="stepPane2" style="display:none;">
+                <h3 style="margin-bottom:12px;">Étape 2 : Script et découpage par scènes</h3>
+                <p style="margin-bottom:18px;">L'IA a généré le script suivant découpé en 3 scènes séquentielles. Vous pouvez ajuster le texte.</p>
+                
+                <div style="display:flex; flex-direction:column; gap:14px;">
+                  <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:var(--border-radius-md); padding:14px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                      <span style="font-weight:700; font-size:0.88rem; color:var(--primary-light);">Scène 1 : L'accroche (Hook 0-3s)</span>
+                      <span style="font-size:0.75rem; color:var(--text-muted);">Durée: 3s</span>
+                    </div>
+                    <textarea rows="2" style="width:100%; padding:8px;">Arrête de scroller si tu veux exploser tes vues sur TikTok cette semaine !</textarea>
+                  </div>
+
+                  <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:var(--border-radius-md); padding:14px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                      <span style="font-weight:700; font-size:0.88rem; color:var(--accent-purple);">Scène 2 : Les secrets algorithmiques</span>
+                      <span style="font-size:0.75rem; color:var(--text-muted);">Durée: 20s</span>
+                    </div>
+                    <textarea rows="3" style="width:100%; padding:8px;">Le secret numéro 1, c'est la rétention dans les trois premières secondes. Utilise un sous-titrage ultra-dynamique et du mouvement permanent.</textarea>
+                  </div>
+
+                  <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:var(--border-radius-md); padding:14px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                      <span style="font-weight:700; font-size:0.88rem; color:var(--accent-emerald);">Scène 3 : Appel à l'action (CTA)</span>
+                      <span style="font-size:0.75rem; color:var(--text-muted);">Durée: 7s</span>
+                    </div>
+                    <textarea rows="2" style="width:100%; padding:8px;">Abonne-toi pour ne rater aucun des prochains hacks de créateurs !</textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 3: Voix & Langue -->
+              <div class="studio-step-pane" id="stepPane3" style="display:none;">
+                <h3 style="margin-bottom:12px;">Étape 3 : Choisissez la voix de narration IA</h3>
+                <p style="margin-bottom:18px;">Plus de 50 voix neurales ultra-réalistes dotées d'inflexions naturelles.</p>
+                
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px;">
+                  <div class="card" style="padding:14px; border-color:var(--primary-light); background:rgba(99,102,241,0.1); cursor:pointer;">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                      <div class="user-avatar-circle" style="background:linear-gradient(135deg, #10B981, #059669); width:32px; height:32px;">TH</div>
+                      <div>
+                        <div style="font-weight:700; font-size:0.9rem;">Thomas (Recommandé)</div>
+                        <div style="font-size:0.75rem; color:var(--text-muted);">Français (France) — Énergique</div>
+                      </div>
+                    </div>
+                    <div style="font-size:0.78rem; color:var(--text-secondary);">Idéal pour le storytelling captivant et les formats TikTok.</div>
+                  </div>
+
+                  <div class="card" style="padding:14px; cursor:pointer;">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                      <div class="user-avatar-circle" style="background:linear-gradient(135deg, #EC4899, #8B5CF6); width:32px; height:32px;">SA</div>
+                      <div>
+                        <div style="font-weight:700; font-size:0.9rem;">Sarah</div>
+                        <div style="font-size:0.75rem; color:var(--text-muted);">Français (France) — Chaleureuse</div>
+                      </div>
+                    </div>
+                    <div style="font-size:0.78rem; color:var(--text-secondary);">Parfaite pour les tutoriels et vidéos de formation.</div>
+                  </div>
+
+                  <div class="card" style="padding:14px; cursor:pointer;">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                      <div class="user-avatar-circle" style="background:linear-gradient(135deg, #F59E0B, #D97706); width:32px; height:32px;">LU</div>
+                      <div>
+                        <div style="font-weight:700; font-size:0.9rem;">Lucas</div>
+                        <div style="font-size:0.75rem; color:var(--text-muted);">Français (Canada) — Professionnel</div>
+                      </div>
+                    </div>
+                    <div style="font-size:0.78rem; color:var(--text-secondary);">Adapté aux vidéos business et présentations d'entreprises.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 4: Style Visuel -->
+              <div class="studio-step-pane" id="stepPane4" style="display:none;">
+                <h3 style="margin-bottom:12px;">Étape 4 : Style artistique des images & scènes</h3>
+                <p style="margin-bottom:18px;">Sélectionnez l'ambiance esthétique qui correspond à votre audience.</p>
+
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px;">
+                  <div class="card" style="padding:12px; border-color:var(--accent-purple); cursor:pointer;">
+                    <img src="assets/images/creator-card.jpg" alt="Style Réaliste" style="border-radius:8px; height:110px; object-fit:cover; margin-bottom:8px;">
+                    <div style="font-weight:700; font-size:0.9rem;">Photographie Réaliste</div>
+                    <div style="font-size:0.76rem; color:var(--text-muted);">Look authentique 4K et naturel</div>
+                  </div>
+
+                  <div class="card" style="padding:12px; cursor:pointer;">
+                    <img src="assets/images/hero-laptop.jpg" alt="Style 3D Futuriste" style="border-radius:8px; height:110px; object-fit:cover; margin-bottom:8px;">
+                    <div style="font-weight:700; font-size:0.9rem;">3D Cyberpunk & Tech</div>
+                    <div style="font-size:0.76rem; color:var(--text-muted);">Effets néons et rendus 3D vibrants</div>
+                  </div>
+
+                  <div class="card" style="padding:12px; cursor:pointer;">
+                    <img src="assets/images/motivation.jpg" alt="Style Cinématographique" style="border-radius:8px; height:110px; object-fit:cover; margin-bottom:8px;">
+                    <div style="font-weight:700; font-size:0.9rem;">Cinéma Épique</div>
+                    <div style="font-size:0.76rem; color:var(--text-muted);">Éclairage dramatique grand angle</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 5: Simulation de Rendu & Génération -->
+              <div class="studio-step-pane" id="stepPane5" style="display:none;">
+                <div style="text-align:center; padding:32px 16px; max-width:540px; margin:0 auto;">
+                  <div class="logo-icon-wrap" style="width:64px; height:64px; margin:0 auto 18px; animation:pulseDot 2s infinite;">
+                    <img src="assets/images/logo-icon.png" alt="Génération IA en cours" width="64" height="64">
+                  </div>
+                  <h3 style="margin-bottom:8px;">Génération de votre vidéo en cours...</h3>
+                  <p id="studioGenStatusText" style="margin-bottom:24px; color:var(--primary-light);">Initialisation du pipeline IA...</p>
+
+                  <!-- Progress Bar -->
+                  <div style="width:100%; height:10px; background:rgba(255,255,255,0.08); border-radius:999px; overflow:hidden; margin-bottom:12px;">
+                    <div id="studioGenProgressBar" style="width:5%; height:100%; background:var(--grad-primary); transition:width 0.4s ease;"></div>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-muted);">
+                    <span>Temps estimé : ~15s</span>
+                    <span id="studioGenProgressPercent">5%</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stepper Action Buttons -->
+              <div style="display:flex; align-items:center; justify-content:space-between; padding-top:16px; border-top:1px solid var(--border-subtle); margin-top:8px;">
+                <button class="btn btn-secondary" id="studioPrevBtn" style="display:none;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                  <span>Étape précédente</span>
+                </button>
+                <div style="margin-left:auto; display:flex; gap:12px;">
+                  <button class="btn btn-primary" id="studioNextBtn">
+                    <span>Continuer</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </button>
+                  <button class="btn btn-primary" id="studioStartGenBtn" style="display:none;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>Lancer la génération IA</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 3: EDITOR (STUDIO DE MONTAGE & TIMELINE)
+             ================================================================== -->
+        <section class="app-view" id="view-editor">
+          <div class="editor-workspace">
+            
+            <!-- Editor Top Control Bar -->
+            <div class="editor-header-bar">
+              <div style="display:flex; align-items:center; gap:12px;">
+                <button class="btn btn-ghost btn-sm" data-view="view-accueil" title="Retour">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                </button>
+                <div>
+                  <h3 style="font-size:1.05rem;">5 conseils pour réussir sur TikTok</h3>
+                  <span style="font-size:0.75rem; color:var(--text-muted);">Projet enregistré • Qualité 1080p HD</span>
+                </div>
+              </div>
+
+              <!-- Aspect Ratio Switcher -->
+              <div class="aspect-ratio-selector">
+                <button class="aspect-btn" data-ratio="16:9">16:9</button>
+                <button class="aspect-btn active" data-ratio="9:16">9:16 (TikTok)</button>
+                <button class="aspect-btn" data-ratio="1:1">1:1</button>
+              </div>
+
+              <!-- Export Button -->
+              <div style="display:flex; gap:10px;">
+                <button class="btn btn-secondary btn-sm" id="editorSaveBtn">Enregistrer</button>
+                <button class="btn btn-primary btn-sm" id="editorExportBtn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <span>Exporter MP4</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Editor Center Area (Preview Stage + Right Inspector) -->
+            <div class="editor-main-area">
+              
+              <!-- Video Player Canvas Stage -->
+              <div class="editor-canvas-stage">
+                <div class="video-frame-container ratio-9-16" id="videoFrameContainer">
+                  <img src="assets/images/creator-card.jpg" alt="Aperçu vidéo" style="width:100%; height:100%; object-fit:cover;">
+                  <!-- Dynamic Subtitle Overlay -->
+                  <div class="subtitle-preview-overlay" id="editorSubtitleOverlay">
+                    5 CONSEILS POUR RÉUSSIR SUR TIKTOK
+                  </div>
+                </div>
+
+                <!-- Floating Playback Bar under Video -->
+                <div style="margin-top:14px; display:flex; align-items:center; gap:14px;">
+                  <button class="btn btn-primary btn-icon-only" id="editorPlayPauseBtn" aria-label="Lire ou mettre en pause">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                  </button>
+                  <span id="editorTimeDisplay" style="font-family:var(--font-family-mono); font-size:0.85rem; color:var(--text-secondary);">00:14 / 01:02</span>
+                </div>
+              </div>
+
+              <!-- Right Inspector Panel -->
+              <div class="editor-sidebar-panel">
+                <h4 style="font-size:0.95rem; border-bottom:1px solid var(--border-subtle); padding-bottom:8px;">Inspecteur d'éléments</h4>
+                
+                <div>
+                  <label style="display:block; font-size:0.82rem; font-weight:600; margin-bottom:6px;">Texte des sous-titres :</label>
+                  <input type="text" id="editorSubtitleInput" value="5 CONSEILS POUR RÉUSSIR SUR TIKTOK" style="width:100%; padding:8px;">
+                </div>
+
+                <div>
+                  <label style="display:block; font-size:0.82rem; font-weight:600; margin-bottom:6px;">Style des sous-titres :</label>
+                  <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:8px;">
+                    <button class="btn btn-secondary btn-sm" style="border-color:var(--primary-light);">MrBeast Bold</button>
+                    <button class="btn btn-secondary btn-sm">Karaoké Pop</button>
+                    <button class="btn btn-secondary btn-sm">Minimaliste</button>
+                    <button class="btn btn-secondary btn-sm">Cinéma</button>
+                  </div>
+                </div>
+
+                <div>
+                  <label style="display:block; font-size:0.82rem; font-weight:600; margin-bottom:6px;">Piste musicale de fond :</label>
+                  <select style="width:100%; padding:8px;">
+                    <option>Cyberpunk Pulse (Énergique - 128 BPM)</option>
+                    <option>Acoustic Sunrise (Chaleureux)</option>
+                    <option>Deep Motivation (Inspirant)</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Bottom Visual Timeline Track -->
+            <div class="editor-timeline-card">
+              <div class="timeline-controls">
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <span style="font-size:0.85rem; font-weight:700;">Chronologie multipistes</span>
+                  <span class="badge badge-success">3 Pistes actives</span>
+                </div>
+                <div style="display:flex; gap:6px;">
+                  <button class="btn btn-secondary btn-sm">+ Scène</button>
+                  <button class="btn btn-secondary btn-sm">+ Audio</button>
+                </div>
+              </div>
+
+              <div class="timeline-scroll-container">
+                <div class="timeline-tracks-wrap">
+                  <!-- Playhead Bar -->
+                  <div id="timelinePlayhead" style="position:absolute; top:0; bottom:0; left:22%; width:2px; background:var(--accent-pink); z-index:10; pointer-events:none;">
+                    <div style="width:10px; height:10px; background:var(--accent-pink); border-radius:50%; margin-left:-4px; margin-top:-4px;"></div>
+                  </div>
+
+                  <!-- Track 1: Video Scenes -->
+                  <div class="timeline-track">
+                    <span style="font-size:0.7rem; color:var(--text-muted); width:60px;">Vidéo</span>
+                    <div class="timeline-clip video-clip">Scène 1 : Intro</div>
+                    <div class="timeline-clip video-clip" style="width:40%;">Scène 2 : Conseils</div>
+                    <div class="timeline-clip video-clip" style="width:20%;">Scène 3 : CTA</div>
+                  </div>
+
+                  <!-- Track 2: Voiceover -->
+                  <div class="timeline-track">
+                    <span style="font-size:0.7rem; color:var(--text-muted); width:60px;">Voix IA</span>
+                    <div class="timeline-clip voice-clip">Voix Thomas (Synthèse)</div>
+                  </div>
+
+                  <!-- Track 3: Subtitles -->
+                  <div class="timeline-track">
+                    <span style="font-size:0.7rem; color:var(--text-muted); width:60px;">Sous-titres</span>
+                    <div class="timeline-clip sub-clip">Sous-titrage auto synchronisé</div>
+                  </div>
+
+                  <!-- Track 4: Music -->
+                  <div class="timeline-track">
+                    <span style="font-size:0.7rem; color:var(--text-muted); width:60px;">Musique</span>
+                    <div class="timeline-clip music-clip">Cyberpunk Pulse (Fond -18dB)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 4: PROJETS & VIDÉOS (BIBLIOTHÈQUE)
+             ================================================================== -->
+        <section class="app-view" id="view-projects">
+          <div style="display:flex; flex-direction:column; gap:20px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+              <div>
+                <h2>Mes Projets & Vidéos</h2>
+                <p>Gérez, organisez et téléchargez l'ensemble de vos créations vidéo.</p>
+              </div>
+              <button class="btn btn-primary" data-view="view-studio">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Nouveau projet</span>
+              </button>
+            </div>
+
+            <!-- Projects Grid or Empty State -->
+            <div id="projectsGridContainer" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:18px;">
+            </div>
+            <div id="projectsEmptyState" class="empty-state-box" style="display:none;">
+              <div class="empty-state-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                </svg>
+              </div>
+              <h3 style="margin-bottom:8px;">Aucun projet vidéo pour le moment</h3>
+              <p style="color:var(--text-muted); max-width:420px; margin:0 auto 20px; font-size:0.9rem;">
+                Donnez vie à vos idées en quelques secondes. Créez votre première vidéo avec notre studio assisté par intelligence artificielle.
+              </p>
+              <button class="btn btn-primary" data-view="view-studio">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Créer ma première vidéo</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 5: MODÈLES (TEMPLATES CATALOG)
+             ================================================================== -->
+        <section class="app-view" id="view-templates">
+          <div style="display:flex; flex-direction:column; gap:20px;">
+            <div>
+              <h2>Catalogue de Modèles Vidéo</h2>
+              <p>Démarrez à partir de plus de 100 templates testés pour leur engagement.</p>
+            </div>
+            
+            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px;">
+              <div class="card" style="padding:12px; cursor:pointer;" data-view="view-studio">
+                <img src="assets/images/education.jpg" alt="Modèle Éducation" style="width:100%; border-radius:8px; aspect-ratio:16/10; object-fit:cover; margin-bottom:10px;">
+                <h4>Formation & Cours en Ligne</h4>
+                <p style="font-size:0.8rem; margin-bottom:10px;">Structure claire avec synthèses et infographies clés.</p>
+                <button class="btn btn-primary btn-sm" style="width:100%;">Utiliser ce modèle</button>
+              </div>
+
+              <div class="card" style="padding:12px; cursor:pointer;" data-view="view-studio">
+                <img src="assets/images/business.jpg" alt="Modèle Business" style="width:100%; border-radius:8px; aspect-ratio:16/10; object-fit:cover; margin-bottom:10px;">
+                <h4>Pitch & Présentation Startup</h4>
+                <p style="font-size:0.8rem; margin-bottom:10px;">Graphiques animés et transitions corporate soignées.</p>
+                <button class="btn btn-primary btn-sm" style="width:100%;">Utiliser ce modèle</button>
+              </div>
+
+              <div class="card" style="padding:12px; cursor:pointer;" data-view="view-studio">
+                <img src="assets/images/motivation.jpg" alt="Modèle Motivation" style="width:100%; border-radius:8px; aspect-ratio:16/10; object-fit:cover; margin-bottom:10px;">
+                <h4>Motivation & Développement Personnel</h4>
+                <p style="font-size:0.8rem; margin-bottom:10px;">Voix grave puissante et plans cinématographiques.</p>
+                <button class="btn btn-primary btn-sm" style="width:100%;">Utiliser ce modèle</button>
+              </div>
+
+              <div class="card" style="padding:12px; cursor:pointer;" data-view="view-studio">
+                <img src="assets/images/creator-card.jpg" alt="Modèle TikTok" style="width:100%; border-radius:8px; aspect-ratio:16/10; object-fit:cover; margin-bottom:10px;">
+                <h4>Shorts & TikTok Viral</h4>
+                <p style="font-size:0.8rem; margin-bottom:10px;">Sous-titres animés mot à mot et bande sonore punchy.</p>
+                <button class="btn btn-primary btn-sm" style="width:100%;">Utiliser ce modèle</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 6: MÉDIATHÈQUE & TEAM WORKSPACE
+             ================================================================== -->
+        <section class="app-view" id="view-media">
+          <div style="display:flex; flex-direction:column; gap:20px;">
+            <div>
+              <h2>Médiathèque & Espace d'Équipe</h2>
+              <p>Centralisez vos logos, chartes graphiques, polices et fichiers multimédias.</p>
+            </div>
+
+            <div class="card" style="border-style:dashed; border-width:2px; text-align:center; padding:36px 16px;">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--primary-light)" style="margin:0 auto 12px;">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              <h4>Glissez-déposez vos fichiers ici</h4>
+              <p style="margin-bottom:16px;">Formats supportés : PNG, JPG, MP4, MP3, WAV (jusqu'à 500 Mo)</p>
+              <button class="btn btn-primary btn-sm">Parcourir les fichiers</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 7: VOIX IA
+             ================================================================== -->
+        <section class="app-view" id="view-voices">
+          <div style="display:flex; flex-direction:column; gap:20px;">
+            <div>
+              <h2>Catalogue des Voix IA</h2>
+              <p>Écoutez et choisissez parmi des voix humaines générées par réseaux neuronaux.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:16px;">
+              <div class="card" style="display:flex; align-items:center; gap:14px; padding:16px;">
+                <div class="user-avatar-circle" style="background:#10B981;">TH</div>
+                <div style="flex:1;">
+                  <h4>Thomas</h4>
+                  <p style="font-size:0.75rem;">Français • Énergique & Captivant</p>
+                </div>
+                <button class="btn btn-secondary btn-icon-only">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </button>
+              </div>
+
+              <div class="card" style="display:flex; align-items:center; gap:14px; padding:16px;">
+                <div class="user-avatar-circle" style="background:#EC4899;">SA</div>
+                <div style="flex:1;">
+                  <h4>Sarah</h4>
+                  <p style="font-size:0.75rem;">Français • Douce & Posée</p>
+                </div>
+                <button class="btn btn-secondary btn-icon-only">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </button>
+              </div>
+
+              <div class="card" style="display:flex; align-items:center; gap:14px; padding:16px;">
+                <div class="user-avatar-circle" style="background:#3B82F6;">LU</div>
+                <div style="flex:1;">
+                  <h4>Lucas</h4>
+                  <p style="font-size:0.75rem;">Français • Reporter & Professionnel</p>
+                </div>
+                <button class="btn btn-secondary btn-icon-only">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 8: UTILISATION (ANALYTICS)
+             ================================================================== -->
+        <section class="app-view" id="view-analytics">
+          <div style="display:flex; flex-direction:column; gap:20px;">
+            <div>
+              <h2>Statistiques d'Utilisation</h2>
+              <p>Suivez votre consommation de calcul GPU et de crédits mensuels.</p>
+            </div>
+
+            <div class="card">
+              <h3 style="margin-bottom:12px;">Consommation mensuelle (Mai 2025)</h3>
+              <p style="margin-bottom:20px;">Vous avez consommé 520 crédits sur vos 1 000 crédits disponibles.</p>
+              <div class="credits-progress-bar" style="height:12px;">
+                <div class="credits-progress-fill" style="width:52%;"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 9: MON ABONNEMENT (BILLING)
+             ================================================================== -->
+        <section class="app-view" id="view-billing">
+          <div style="display:flex; flex-direction:column; gap:24px;">
+            <div>
+              <h2>Abonnement & Facturation</h2>
+              <p>Gérez votre formule VYDEORA, basculez en facturation annuelle (-20%) et rechargez vos crédits.</p>
+            </div>
+
+            <!-- Current Plan Card (Dynamic) -->
+            <div class="card" style="background:linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(139,92,246,0.1) 100%); border-color:var(--primary-light);">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+                <div>
+                  <span class="badge badge-pro" id="billingActivePlanBadge">FORFAIT ACTIF</span>
+                  <h3 style="font-size:1.35rem; margin-top:6px;" id="billingActivePlanTitle">Plan Gratuit Découverte — 100 crédits</h3>
+                  <p style="color:var(--text-secondary); margin:0;" id="billingActivePlanSubtitle">100 crédits de démarrage inclus • Sans engagement</p>
+                </div>
+                <div style="display:flex; gap:10px; align-items:center;">
+                  <button class="btn btn-outline btn-sm" id="billingManageBtn">Gérer mon moyen de paiement</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Billing Cycle Switcher: Mensuel / Annuel (-20%) -->
+            <div class="billing-toggle-container">
+              <span class="billing-cycle-label active" id="dashboardBillingMonthlyLabel">Facturation mensuelle</span>
+              <div class="billing-switch" id="dashboardBillingSwitch" role="button" tabindex="0" aria-label="Basculer vers la facturation annuelle avec 20% de réduction">
+                <div class="billing-switch-knob"></div>
+              </div>
+              <span class="billing-cycle-label" id="dashboardBillingAnnualLabel">Facturation annuelle</span>
+              <span class="billing-discount-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Économisez 20%
+              </span>
+            </div>
+
+            <!-- Structured Pricing Tiers (4 Plans) -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:18px; align-items:stretch;">
+              
+              <!-- Tier 1: Gratuit -->
+              <div class="billing-tier-card" id="tierCardFree">
+                <h4>Gratuit (Découverte)</h4>
+                <div class="tier-price-row">
+                  <span class="tier-price-amount">0</span>
+                  <span style="font-size:1.3rem; font-weight:700;">€</span>
+                  <span class="tier-price-period">/mois</span>
+                </div>
+                <div class="tier-annual-subnote">Sans engagement ni carte</div>
+                <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:14px;">Idéal pour tester la génération de scripts et créer vos premières vidéos IA.</p>
+                <ul class="tier-features-list">
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>100 crédits</strong> de démarrage offerts</span>
+                  </li>
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Studio de script IA complet</span>
+                  </li>
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Export résolution 720p standard</span>
+                  </li>
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Voix neuronales de base</span>
+                  </li>
+                </ul>
+                <button class="btn btn-secondary btn-sm" id="btnTierFree" style="width:100%; justify-content:center;" disabled>Forfait actuel</button>
+              </div>
+
+              <!-- Tier 2: Starter -->
+              <div class="billing-tier-card" id="tierCardStarter">
+                <h4>Starter</h4>
+                <div class="tier-price-row">
+                  <span class="tier-price-amount" id="priceTierStarter">15</span>
+                  <span style="font-size:1.3rem; font-weight:700;">€</span>
+                  <span class="tier-price-period" id="periodTierStarter">/mois</span>
+                </div>
+                <div class="tier-annual-subnote" id="subnoteTierStarter">&nbsp;</div>
+                <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:14px;">Pour les créateurs occasionnels souhaitant un rendu net sans filigrane.</p>
+                <ul class="tier-features-list">
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>300 crédits</strong> mensuels (~5 min de vidéo)</span>
+                  </li>
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Exports <strong>1080p Full HD</strong> fluides</span>
+                  </li>
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>Sans filigrane</strong> VYDEORA</span>
+                  </li>
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Accès à 15+ voix standard</span>
+                  </li>
+                </ul>
+                <button class="btn btn-outline btn-sm" id="btnTierStarter" style="width:100%; justify-content:center;">Choisir Starter</button>
+              </div>
+
+              <!-- Tier 3: Pro (Le plus populaire) -->
+              <div class="billing-tier-card featured" id="tierCardPro">
+                <div class="popular-badge-wrap">
+                  <span class="popular-badge">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    <span>Le plus populaire</span>
+                  </span>
+                </div>
+                <h4>Pro</h4>
+                <div class="tier-price-row">
+                  <span class="tier-price-amount" id="priceTierPro">29</span>
+                  <span style="font-size:1.3rem; font-weight:700;">€</span>
+                  <span class="tier-price-period" id="periodTierPro">/mois</span>
+                </div>
+                <div class="tier-annual-subnote" id="subnoteTierPro">&nbsp;</div>
+                <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:14px;">Recommandé pour les créateurs publiant sur TikTok, YouTube et Reels.</p>
+                <ul class="tier-features-list">
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>1 000 crédits</strong> mensuels (~16 min de vidéo)</span>
+                  </li>
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Rendu <strong>1080p 60 FPS & 4K Ultra HD</strong></span>
+                  </li>
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Toutes les voix neuronales <strong>illimitées</strong></span>
+                  </li>
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Sous-titres dynamiques viraux (mot à mot)</span>
+                  </li>
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>File de rendu GPU prioritaire</span>
+                  </li>
+                </ul>
+                <button class="btn btn-primary btn-sm" id="btnTierPro" style="width:100%; justify-content:center;">Passer à Pro</button>
+              </div>
+
+              <!-- Tier 4: Entreprise -->
+              <div class="billing-tier-card" id="tierCardEnterprise">
+                <h4>Entreprise</h4>
+                <div class="tier-price-row">
+                  <span class="tier-price-amount" id="priceTierEnterprise">99</span>
+                  <span style="font-size:1.3rem; font-weight:700;">€</span>
+                  <span class="tier-price-period" id="periodTierEnterprise">/mois</span>
+                </div>
+                <div class="tier-annual-subnote" id="subnoteTierEnterprise">&nbsp;</div>
+                <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:14px;">Pour les agences de marketing, studios et équipes collaboratives.</p>
+                <ul class="tier-features-list">
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>5 000 crédits</strong> mensuels (~80 min de vidéo)</span>
+                  </li>
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Accès complet <strong>API & Webhooks</strong></span>
+                  </li>
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Espaces d'équipe multi-utilisateurs</span>
+                  </li>
+                  <li class="tier-feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Gestionnaire de compte dédié & SLA 99.9%</span>
+                  </li>
+                </ul>
+                <button class="btn btn-outline btn-sm" id="btnTierEnterprise" style="width:100%; justify-content:center;">Passer à Entreprise</button>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 10: PARAMÈTRES (SETTINGS)
+             ================================================================== -->
+        <section class="app-view" id="view-settings">
+          <div style="display:flex; flex-direction:column; gap:24px; max-width:860px;">
+            <div>
+              <h2>Paramètres du Compte</h2>
+              <p>Gérez votre profil, votre photo, vos préférences vidéo et la sécurité de votre session.</p>
+            </div>
+
+            <!-- CARD 1: PHOTO DE PROFIL & AVATAR -->
+            <div class="card">
+              <h3 style="margin-bottom:6px;">Photo de profil</h3>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:18px;">
+                Téléchargez un avatar personnalisé (formats acceptés : JPG, PNG, WEBP — max 5 Mo).
+              </p>
+
+              <div class="avatar-management-box">
+                <div class="avatar-large-preview" id="settingsAvatarPreview">AM</div>
+                <div style="flex:1;">
+                  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:8px;">
+                    <input type="file" id="avatarFileInput" accept="image/png, image/jpeg, image/webp" style="display:none;">
+                    <button type="button" class="btn btn-secondary btn-sm" id="avatarChooseBtn">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                      <span>Choisir une photo...</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" id="avatarUploadBtn" style="display:none;">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path></svg>
+                      <span>Confirmer l'envoi</span>
+                    </button>
+                    <button type="button" class="btn btn-ghost btn-sm" id="avatarRemoveBtn" style="color:var(--accent-pink);">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                      <span>Supprimer la photo</span>
+                    </button>
+                  </div>
+                  <div style="font-size:0.75rem; color:var(--text-muted);" id="avatarFileNameDisplay">Aucun fichier sélectionné</div>
+                  <div id="avatarAlertContainer" style="margin-top:8px;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 2: INFORMATIONS DU PROFIL -->
+            <div class="card">
+              <h3 style="margin-bottom:14px;">Informations personnelles</h3>
+              <form id="profileSettingsForm">
+                <div id="profileAlertContainer" style="margin-bottom:14px;"></div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; margin-bottom:16px;">
+                  <div>
+                    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Nom complet <span style="color:var(--accent-pink);">*</span></label>
+                    <input type="text" id="settingsFullName" required style="width:100%; padding:10px; background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:8px; color:#FFFFFF;">
+                  </div>
+                  <div>
+                    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Adresse e-mail (liée au compte)</label>
+                    <input type="email" id="settingsEmail" readonly style="width:100%; padding:10px; background:rgba(255,255,255,0.01); border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-muted); cursor:not-allowed;">
+                  </div>
+                  <div>
+                    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Langue de l'interface</label>
+                    <select id="settingsLanguage" style="width:100%; padding:10px; background:#0B1426; border:1px solid var(--border-subtle); border-radius:8px; color:#FFFFFF;">
+                      <option value="fr">Français (France)</option>
+                      <option value="en">English (US)</option>
+                      <option value="es">Español</option>
+                      <option value="de">Deutsch</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Fuseau horaire</label>
+                    <select id="settingsTimezone" style="width:100%; padding:10px; background:#0B1426; border:1px solid var(--border-subtle); border-radius:8px; color:#FFFFFF;">
+                      <option value="Europe/Paris">Europe/Paris (UTC+01:00 / UTC+02:00)</option>
+                      <option value="UTC">UTC (Temps Universel Coordonné)</option>
+                      <option value="America/New_York">America/New_York (EST/EDT)</option>
+                      <option value="America/Los_Angeles">America/Los_Angeles (PST/PDT)</option>
+                      <option value="Africa/Casablanca">Africa/Casablanca (GMT+1)</option>
+                    </select>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm" id="saveProfileBtn">Enregistrer le profil</button>
+              </form>
+            </div>
+
+            <!-- CARD 3: PRÉFÉRENCES VIDÉO & NOTIFICATIONS -->
+            <div class="card">
+              <h3 style="margin-bottom:14px;">Préférences de création vidéo</h3>
+              <form id="preferencesSettingsForm">
+                <div id="preferencesAlertContainer" style="margin-bottom:14px;"></div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; margin-bottom:16px;">
+                  <div>
+                    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Format vidéo par défaut</label>
+                    <select id="settingsDefaultFormat" style="width:100%; padding:10px; background:#0B1426; border:1px solid var(--border-subtle); border-radius:8px; color:#FFFFFF;">
+                      <option value="9:16">9:16 — Vertical (TikTok, Reels, Shorts)</option>
+                      <option value="16:9">16:9 — Paysage (YouTube, Web, TV)</option>
+                      <option value="1:1">1:1 — Carré (Instagram, Facebook)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Langue audio par défaut</label>
+                    <select id="settingsDefaultVoiceLang" style="width:100%; padding:10px; background:#0B1426; border:1px solid var(--border-subtle); border-radius:8px; color:#FFFFFF;">
+                      <option value="fr">Français (Thomas, Sarah, Lucas)</option>
+                      <option value="en">English (Adam, Rachel)</option>
+                      <option value="es">Español (Mateo, Sofia)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Catégorie de contenu principale</label>
+                    <select id="settingsCreatorCategory" style="width:100%; padding:10px; background:#0B1426; border:1px solid var(--border-subtle); border-radius:8px; color:#FFFFFF;">
+                      <option value="general">Général & Polyvalent</option>
+                      <option value="education">Éducation & Tutoriels</option>
+                      <option value="business">Business & Entrepreneuriat</option>
+                      <option value="motivation">Motivation & Développement</option>
+                      <option value="entertainment">Divertissement & Faits insolites</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div style="border-top:1px solid var(--border-subtle); padding-top:14px; margin-bottom:16px;">
+                  <div style="font-size:0.88rem; font-weight:700; color:#FFFFFF; margin-bottom:10px;">Notifications par e-mail</div>
+                  <div style="display:flex; flex-direction:column; gap:8px;">
+                    <label style="display:flex; align-items:center; gap:10px; font-size:0.84rem; cursor:pointer;">
+                      <input type="checkbox" id="settingsEmailNotifyExport" checked style="accent-color:var(--primary-color);">
+                      <span>Recevoir un e-mail dès qu'un export vidéo haute définition est finalisé</span>
+                    </label>
+                    <label style="display:flex; align-items:center; gap:10px; font-size:0.84rem; cursor:pointer;">
+                      <input type="checkbox" id="settingsEmailNotifyNews" checked style="accent-color:var(--primary-color);">
+                      <span>M'informer des nouvelles voix neuronales et modèles vidéo IA ajoutés</span>
+                    </label>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-secondary btn-sm" id="savePreferencesBtn">Mettre à jour mes préférences</button>
+              </form>
+            </div>
+
+            <!-- CARD 4: SÉCURITÉ & CHANGEMENT DE MOT DE PASSE -->
+            <div class="card">
+              <h3 style="margin-bottom:6px;">Sécurité du compte</h3>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:16px;">
+                Modifiez votre mot de passe pour sécuriser vos accès.
+              </p>
+              <form id="passwordSettingsForm">
+                <div id="passwordAlertContainer" style="margin-bottom:14px;"></div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-bottom:16px;">
+                  <div>
+                    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Mot de passe actuel</label>
+                    <input type="password" id="settingsCurrentPassword" required placeholder="••••••••" style="width:100%; padding:10px; background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:8px; color:#FFFFFF;">
+                  </div>
+                  <div>
+                    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Nouveau mot de passe</label>
+                    <input type="password" id="settingsNewPassword" required minlength="8" placeholder="8+ caractères" style="width:100%; padding:10px; background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:8px; color:#FFFFFF;">
+                  </div>
+                  <div>
+                    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Confirmer le nouveau mot de passe</label>
+                    <input type="password" id="settingsConfirmPassword" required minlength="8" placeholder="••••••••" style="width:100%; padding:10px; background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:8px; color:#FFFFFF;">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-secondary btn-sm" id="changePasswordBtn">Mettre à jour le mot de passe</button>
+              </form>
+            </div>
+
+            <!-- CARD 5: STATUT DU COMPTE & DÉCONNEXION -->
+            <div class="card" style="border:1px solid rgba(239,68,68,0.25);">
+              <h3 style="margin-bottom:6px;">Statut du compte & Session</h3>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:16px;">
+                Informations d'abonnement et contrôle de votre session active.
+              </p>
+
+              <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px; background:rgba(255,255,255,0.02); padding:16px; border-radius:8px; margin-bottom:18px;">
+                <div>
+                  <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:4px;">Formule actuelle :</div>
+                  <div style="font-weight:700; font-size:1.05rem; color:#FFFFFF;" id="settingsPlanBadge">Plan Gratuit Découverte</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;">ID utilisateur : <span id="settingsUserId">usr_...</span></div>
+                </div>
+                <div>
+                  <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:4px;">Solde de crédits :</div>
+                  <div style="font-weight:700; font-size:1.2rem; color:var(--accent-cyan);" id="settingsCreditCount">100 crédits</div>
+                </div>
+                <div>
+                  <button class="btn btn-primary btn-sm" data-view="view-billing">Gérer l'abonnement</button>
+                </div>
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-top:1px solid var(--border-subtle); padding-top:16px;">
+                <div>
+                  <div style="font-weight:600; font-size:0.9rem; color:#FFFFFF;">Fermer la session actuelle</div>
+                  <div style="font-size:0.78rem; color:var(--text-muted);">Termine votre session sécurisée et vous redirige vers l'accueil.</div>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" id="settingsLogoutBtn" style="border-color:rgba(239,68,68,0.4); color:var(--accent-pink);">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                  <span>Se déconnecter</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+
+
+        <!-- ==================================================================
+             VIEW 12: PUBLIC WEBSITE (LANDING PAGE)
+             ================================================================== -->
+        <section class="app-view" id="view-public">
+          <div style="display:flex; flex-direction:column; gap:40px; max-width:1100px; margin:0 auto;">
+            
+            <!-- Public Hero -->
+            <div style="text-align:center; padding:40px 16px;">
+              <div class="hero-badge" style="margin-bottom:16px;">
+                <span>✨ Révolutionnez votre création vidéo avec VYDEORA</span>
+              </div>
+              <h1 style="font-size:clamp(1.8rem, 4vw, 3rem); font-weight:800; line-height:1.2; margin-bottom:16px;">
+                La plateforme IA tout-en-un pour créer des vidéos professionnelles
+              </h1>
+              <p style="font-size:1.1rem; max-width:680px; margin:0 auto 28px;">
+                Générez des scripts captivants, des voix humaines naturelles et des visuels 4K en quelques secondes. Sans logiciel lourd ni compétence technique.
+              </p>
+              <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+                <button class="btn btn-primary btn-lg" data-view="view-accueil">Accéder à mon espace</button>
+                <button class="btn btn-secondary btn-lg" data-view="view-studio">Essayer le studio gratuit</button>
+              </div>
+            </div>
+
+            <!-- Features Highlights Grid -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+              <div class="card" style="padding:24px;">
+                <div class="stat-icon-wrap purple" style="width:48px; height:48px; margin-bottom:14px;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+                </div>
+                <h3>Script & Storyboard IA</h3>
+                <p>Donnez une idée générale, l'IA produit un découpage scène par scène avec des accroches testées pour capter l'attention.</p>
+              </div>
+
+              <div class="card" style="padding:24px;">
+                <div class="stat-icon-wrap green" style="width:48px; height:48px; margin-bottom:14px;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path></svg>
+                </div>
+                <h3>Voix de synthèse humaine</h3>
+                <p>Éliminez les voix robotiques. Nos modèles neuronaux reproduisent les intonations, respirations et émotions authentiques.</p>
+              </div>
+
+              <div class="card" style="padding:24px;">
+                <div class="stat-icon-wrap cyan" style="width:48px; height:48px; margin-bottom:14px;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                </div>
+                <h3>Sous-titres & B-Rolls auto</h3>
+                <p>Synchronisation dynamique mot à mot façon MrBeast ou Alex Hormozi avec animations néons et bruitages intégrés.</p>
+              </div>
+            </div>
+
+            <!-- Footer -->
+            <footer style="border-top:1px solid var(--border-subtle); padding:32px 0; text-align:center; color:var(--text-muted); font-size:0.85rem;">
+              <p>© 2026 VYDEORA Inc. Tous droits réservés. Conçu pour les créateurs de nouvelle génération.</p>
+            </footer>
+
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 12: AIDE & SUPPORT
+             ================================================================== -->
+        <section class="app-view" id="view-help">
+          <div style="display:flex; flex-direction:column; gap:20px; max-width:800px;">
+            <div>
+              <h2>Centre d'Aide & Support</h2>
+              <p>Guides de démarrage, foire aux questions et assistance technique.</p>
+            </div>
+
+            <div class="card">
+              <h3 style="margin-bottom:10px;">Questions fréquentes (FAQ)</h3>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); border-radius:8px; padding:12px;">
+                  <h4 style="font-size:0.92rem; margin-bottom:4px;">Combien de temps prend la génération d'une vidéo ?</h4>
+                  <p style="font-size:0.85rem;">En moyenne, une vidéo complète de 60 secondes avec script, voix et sous-titres est prête en moins de 25 secondes.</p>
+                </div>
+                <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); border-radius:8px; padding:12px;">
+                  <h4 style="font-size:0.92rem; margin-bottom:4px;">Puis-je utiliser les vidéos générées à des fins commerciales ?</h4>
+                  <p style="font-size:0.85rem;">Oui, 100% des vidéos créées sur VYDEORA vous appartiennent et sont libres de droits commerciaux sur YouTube, TikTok, Meta et TV.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ====================================================================
+           MOBILE BOTTOM NAVIGATION BAR (FIXED FOR SMARTPHONES)
+           ==================================================================== -->
+      <nav class="mobile-bottom-nav">
+        <a href="#accueil" class="mobile-nav-item active" data-view="view-accueil">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+          <span>Accueil</span>
+        </a>
+        <a href="#projets" class="mobile-nav-item" data-view="view-projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect></svg>
+          <span>Vidéos</span>
+        </a>
+        <a href="#studio" class="mobile-nav-item" data-view="view-studio">
+          <div class="mobile-nav-create-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </div>
+          <span>Créer</span>
+        </a>
+        <a href="#modeles" class="mobile-nav-item" data-view="view-templates">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect></svg>
+          <span>Modèles</span>
+        </a>
+        <a href="#menu" class="mobile-nav-item" id="mobileNavMenuBtn" onclick="document.getElementById('hamburgerBtn').click();">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <span>Menu</span>
+        </a>
+      </nav>
+
+    </main>
+  </div>
+
+  <!-- ========================================================================
+       MODALS & SLIDE-OVER PANELS
+       ======================================================================== -->
+
+  <!-- 1. Command Palette Modal (Ctrl + K) -->
+  <div class="modal-overlay" id="commandPaletteModal">
+    <div class="modal-box" style="max-width:540px;">
+      <div style="padding:14px 16px; border-bottom:1px solid var(--border-subtle); display:flex; align-items:center; gap:10px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--text-muted)">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="commandPaletteInput" placeholder="Rechercher une action, un projet, une vue..." style="width:100%; border:none; background:transparent; font-size:1rem; outline:none; padding:4px 0;">
+        <button class="modal-close-btn" id="commandPaletteClose">✕</button>
+      </div>
+      <div class="modal-body" style="padding:12px 14px;">
+        <div style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px;">Suggestions rapides</div>
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <div class="quick-start-item" onclick="window.VYDEORA.switchView('view-studio'); window.VYDEORA.closeCommandPalette();">
+            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+            <span>Créer une nouvelle vidéo IA</span>
+          </div>
+          <div class="quick-start-item" onclick="window.VYDEORA.switchView('view-projects'); window.VYDEORA.closeCommandPalette();">
+            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            <span>Ouvrir "5 conseils pour réussir sur TikTok"</span>
+          </div>
+          <div class="quick-start-item" onclick="window.VYDEORA.switchView('view-billing'); window.VYDEORA.closeCommandPalette();">
+            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect></svg>
+            <span>Recharger mes crédits vidéo (480 restants)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Export Video Modal -->
+  <div class="modal-overlay" id="exportModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Exporter la Vidéo</h3>
+        <button class="modal-close-btn" id="exportModalClose">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom:16px;">Sélectionnez vos paramètres de rendu final pour le téléchargement :</p>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Résolution :</label>
+            <select style="width:100%; padding:10px;">
+              <option value="1080p">1080p Full HD (60 FPS) — Recommandé</option>
+              <option value="4k">4K Ultra HD (60 FPS) — Qualité studio</option>
+              <option value="720p">720p HD (30 FPS) — Fichier léger</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Format de conteneur :</label>
+            <select style="width:100%; padding:10px;">
+              <option value="mp4">MP4 (H.264 / AAC) — Compatible universel</option>
+              <option value="mov">ProRes MOV (Alpha transparent)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="document.getElementById('exportModal').classList.remove('active');">Annuler</button>
+        <button class="btn btn-primary" id="startExportDownloadBtn">Télécharger la vidéo MP4</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Notifications Slide-over Drawer -->
+  <div class="modal-overlay" id="notificationsDrawer">
+    <div class="modal-box" style="margin-left:auto; margin-right:0; height:100vh; max-height:100vh; border-radius:0; max-width:380px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Notifications</h3>
+        <button class="modal-close-btn" onclick="document.getElementById('notificationsDrawer').classList.remove('active');">✕</button>
+      </div>
+      <div class="modal-body" style="padding:14px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+          <span style="font-size:0.8rem; color:var(--text-muted);" id="notificationsUnreadCount">0 non lue</span>
+          <button class="btn btn-ghost btn-sm" id="markAllReadBtn" style="font-size:0.75rem;">Tout marquer comme lu</button>
+        </div>
+        <div id="notificationsListContainer" style="display:flex; flex-direction:column; gap:10px;"></div>
+        <div id="notificationsEmptyState" class="empty-state-box" style="padding:24px 12px; display:none;">
+          <div class="empty-state-icon" style="width:40px; height:40px; margin-bottom:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          </div>
+          <div style="font-size:0.85rem; font-weight:600; margin-bottom:4px; color:#FFFFFF;">Aucune notification</div>
+          <p style="font-size:0.75rem; color:var(--text-muted); margin:0;">Vous êtes à jour ! Vos alertes d'export et d'activité s'afficheront ici.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Global Toast Notifications Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/studio.js"></script>
+  <script src="js/editor.js"></script>
+</body>
+</html>

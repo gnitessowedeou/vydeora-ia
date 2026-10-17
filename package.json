@@ -1,0 +1,13 @@
+{
+  "name": "vydeora",
+  "version": "1.0.0",
+  "description": "VYDEORA — AI Video Creation & Editing Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.22.3"
+  }
+}

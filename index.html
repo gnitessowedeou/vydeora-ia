@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#070D1B">
+  
+  <!-- Primary Meta Tags -->
+  <title>VYDEORA — Créez des Vidéos Captivantes avec l'IA, Sans Montrer Votre Visage</title>
+  <meta name="title" content="VYDEORA — Créez des Vidéos Captivantes avec l'IA, Sans Montrer Votre Visage">
+  <meta name="description" content="Transformez vos idées et vos scripts en vidéos engageantes grâce à l'IA pour YouTube, TikTok et Reels. Studio de création tout-en-un avec narration vocale et sous-titres dynamiques.">
+  <link rel="canonical" href="http://localhost:3000/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:3000/">
+  <meta property="og:title" content="VYDEORA — Studio de Création Vidéo IA pour Vidéos Sans Visage">
+  <meta property="og:description" content="Générez des vidéos professionnelles avec l'IA sans matériel lourd ni caméra. Script, voix off neuronale, visuels 4K et sous-titres animés.">
+  <meta property="og:image" content="assets/images/dashboard-reference.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="http://localhost:3000/">
+  <meta property="twitter:title" content="VYDEORA — Créez des Vidéos Faceless avec l'IA">
+  <meta property="twitter:description" content="Transformez vos idées et vos scripts en vidéos engageantes pour TikTok, YouTube Shorts et Instagram Reels.">
+  <meta property="twitter:image" content="assets/images/dashboard-reference.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Design System & Landing Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body class="landing-page">
+
+  <!-- Ambient Glow Backgrounds Wrapped to Prevent Viewport Spill -->
+  <div class="ambient-glow-wrap" aria-hidden="true">
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+    <div class="ambient-glow-3"></div>
+  </div>
+
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div class="sidebar-backdrop" id="drawerBackdrop"></div>
+
+  <!-- Mobile Slide-Over Navigation Drawer -->
+  <div class="mobile-menu-drawer" id="mobileDrawer">
+    <div class="mobile-menu-header">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="assets/images/logo-icon.png" alt="VYDEORA" width="30" height="30">
+        <span style="font-weight:800; font-size:1.2rem; color:#FFFFFF;">VYDEORA</span>
+      </div>
+      <button class="modal-close-btn" id="drawerClose" aria-label="Fermer le menu">✕</button>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="#accueil" class="mobile-menu-link">Accueil</a>
+      <a href="#avantages" class="mobile-menu-link">Avantages</a>
+      <a href="#comment-ca-marche" class="mobile-menu-link">Comment ça marche</a>
+      <a href="#exemples" class="mobile-menu-link">Exemples de vidéos</a>
+      <a href="#fonctionnalites" class="mobile-menu-link">Fonctionnalités</a>
+      <a href="#interface" class="mobile-menu-link">Interface produit</a>
+      <a href="#pour-qui" class="mobile-menu-link">Pour qui ?</a>
+      <a href="#tarifs" class="mobile-menu-link">Tarifs</a>
+      <a href="#faq" class="mobile-menu-link">FAQ</a>
+    </div>
+    <div class="mobile-menu-actions">
+      <button class="btn btn-secondary" data-auth-trigger="login" style="width:100%; justify-content:center;">Se connecter</button>
+      <button class="btn btn-primary" data-auth-trigger="signup" style="width:100%; justify-content:center;">Créer ma première vidéo</button>
+      <a href="/app" class="btn btn-outline" style="width:100%; justify-content:center; font-size:0.84rem;">Accéder au tableau de bord</a>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       SECTION 1 — STICKY NAVIGATION BAR
+       ====================================================================== -->
+  <header class="landing-header" id="landingHeader">
+    <div class="landing-container">
+      <nav class="nav-inner">
+        
+        <!-- Left: Logo & Brand -->
+        <a href="#accueil" class="brand-link">
+          <img src="assets/images/logo-icon.png" alt="VYDEORA Logo" width="36" height="36">
+          <span class="brand-title">VYDEORA</span>
+        </a>
+
+        <!-- Center: Desktop Nav Menu -->
+        <div class="desktop-nav-menu">
+          <a href="#accueil" class="desktop-nav-link active">Accueil</a>
+          <a href="#fonctionnalites" class="desktop-nav-link">Fonctionnalités</a>
+          <a href="#comment-ca-marche" class="desktop-nav-link">Comment ça marche</a>
+          <a href="#exemples" class="desktop-nav-link">Exemples</a>
+          <a href="#tarifs" class="desktop-nav-link">Tarifs</a>
+          <a href="#faq" class="desktop-nav-link">FAQ</a>
+        </div>
+
+        <!-- Right: Actions -->
+        <div class="nav-actions">
+          <a href="/app" class="btn btn-ghost btn-sm desktop-only" style="font-size:0.86rem; color:var(--text-secondary);">Tableau de bord</a>
+          <button class="btn btn-secondary btn-sm" data-auth-trigger="login">Se connecter</button>
+          <button class="btn btn-primary btn-sm nav-cta-btn" data-auth-trigger="signup">
+            <span class="desktop-btn-label">Créer une vidéo</span>
+            <span class="mobile-btn-label">Créer</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+          
+          <!-- Hamburger for Mobile -->
+          <button class="mobile-hamburger-btn" id="landingHamburger" aria-label="Ouvrir le menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ====================================================================
+         SECTION 2 — HERO SECTION
+         ==================================================================== -->
+    <section class="hero-section" id="accueil">
+      <div class="landing-container">
+        <div class="hero-grid">
+          
+          <!-- Left Column: Copy & Calls to Action -->
+          <div class="hero-text-col">
+            <div class="hero-tag-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <span>AI VIDEO CREATION STUDIO</span>
+            </div>
+
+            <h1 class="hero-heading">
+              Créez des vidéos captivantes avec l'IA, <span class="text-gradient">sans montrer votre visage.</span>
+            </h1>
+
+            <p class="hero-description">
+              Transformez vos idées et vos scripts en vidéos engageantes grâce à l'IA, avec des outils de création réunis dans un seul espace : script, visuels, voix neuronale, sous-titres dynamiques et assemblage vidéo.
+            </p>
+
+            <div class="hero-cta-group">
+              <button class="btn btn-primary btn-lg" id="heroPrimaryCta" data-auth-trigger="signup">
+                <span>Créer ma première vidéo</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+              <a href="#comment-ca-marche" class="btn btn-secondary btn-lg">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                <span>Découvrir comment ça marche</span>
+              </a>
+            </div>
+
+            <div class="hero-trust-message">
+              <span class="trust-dot"></span>
+              <span>100 crédits de démarrage inclus • Aucune carte bancaire requise • Prêt en quelques minutes</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Premium Dashboard-Inspired Product Visual -->
+          <div class="hero-product-visual-wrap">
+            <div class="hero-product-card">
+              <div class="visual-top-bar">
+                <div class="visual-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--primary-light)"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                  <span>Projet : 5 conseils pour réussir sur TikTok</span>
+                </div>
+                <span class="badge badge-success">Rendu 1080p Prêt</span>
+              </div>
+
+              <!-- Media Box with Video Preview -->
+              <div class="visual-media-box">
+                <img src="assets/images/creator-card.jpg" alt="Aperçu vidéo IA VYDEORA">
+                <div class="visual-play-btn" onclick="document.querySelector('[data-category=\'tiktok\']').click();">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </div>
+                <div class="visual-status-pill">
+                  <span style="width:6px; height:6px; border-radius:50%; background:#10B981;"></span>
+                  <span>Audio & Sous-titres synchronisés</span>
+                </div>
+              </div>
+
+              <!-- Workflow Micro Stats Row -->
+              <div class="visual-controls-row">
+                <div class="visual-micro-card">
+                  <span class="visual-micro-label">Scénario IA</span>
+                  <span class="visual-micro-value">3 scènes découpées</span>
+                </div>
+                <div class="visual-micro-card">
+                  <span class="visual-micro-label">Voix neuronale</span>
+                  <span class="visual-micro-value">Thomas (Français)</span>
+                </div>
+                <div class="visual-micro-card">
+                  <span class="visual-micro-label">Format de sortie</span>
+                  <span class="visual-micro-value">9:16 Vertical (1:02)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3 — VALUE PROPOSITION (4 BENEFITS CARDS)
+         ==================================================================== -->
+    <section class="section-padding" id="avantages">
+      <div class="landing-container">
+        
+        <div class="section-header-center">
+          <span class="section-eyebrow">Pourquoi choisir VYDEORA ?</span>
+          <h2 class="section-title">Tout ce dont vous avez besoin pour concevoir vos vidéos sans caméra</h2>
+          <p class="section-subtitle">Oubliez les logiciels complexes et les longues heures de tournage. Créez des vidéos professionnelles avec une chaîne de production assistée par l'IA.</p>
+        </div>
+
+        <div class="value-prop-grid">
+          <!-- Card 1 -->
+          <div class="value-card">
+            <div class="value-icon-box" style="background:rgba(168, 85, 247, 0.15); color:#C084FC;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h3>Gagnez un temps précieux</h3>
+            <p>Réduisez les tâches répétitives de production grâce à des flux assistés par l'intelligence artificielle pour l'écriture et le montage.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="value-card">
+            <div class="value-icon-box" style="background:rgba(53, 200, 245, 0.15); color:#35C8F5;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </div>
+            <h3>Créez sans montrer votre visage</h3>
+            <p>Bâtissez des contenus attractifs autour de scripts percutants, de narrations vocales réalistes et de visuels dynamiques sans caméra.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="value-card">
+            <div class="value-icon-box" style="background:rgba(236, 72, 153, 0.15); color:#F472B6;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </div>
+            <h3>Simplifiez votre flux de travail</h3>
+            <p>Réunissez le script, les scènes, la médiathèque et l'exportation vidéo au sein d'un seul espace de travail intuitif et fluide.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="value-card">
+            <div class="value-icon-box" style="background:rgba(16, 185, 129, 0.15); color:#34D399;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            </div>
+            <h3>Concevez pour tous les formats</h3>
+            <p>Préparez des contenus pour les vidéos courtes verticales (TikTok, Shorts, Reels) et pour les formats horizontaux (YouTube).</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4 — HOW IT WORKS (4-STEP WORKFLOW)
+         ==================================================================== -->
+    <section class="section-padding" id="comment-ca-marche" style="background:rgba(11, 20, 38, 0.4); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+      <div class="landing-container">
+        
+        <div class="section-header-center">
+          <span class="section-eyebrow">Flux de création étape par étape</span>
+          <h2 class="section-title">Comment fonctionne VYDEORA ?</h2>
+          <p class="section-subtitle">Une méthode en 4 étapes simples et transparentes. Vous gardez le contrôle total sur chaque mot et chaque image.</p>
+        </div>
+
+        <div class="steps-grid">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-number-badge">1</div>
+            <h3>Saisissez votre idée</h3>
+            <p>Indiquez le sujet de votre vidéo, fournissez une ébauche d'idée ou collez directement votre script brut.</p>
+            <div class="step-micro-preview">
+              <span style="color:var(--primary-light);">Prompt :</span> "5 conseils pour réussir sur TikTok en 60 secondes..."
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-number-badge">2</div>
+            <h3>Générez votre script</h3>
+            <p>L'IA structure la narration, crée une accroche captivante pour les premières secondes et découpe l'histoire en scènes.</p>
+            <div class="step-micro-preview">
+              <span style="color:var(--accent-purple);">Scène 1 :</span> "Arrête de scroller si tu veux exploser tes vues..."
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-number-badge">3</div>
+            <h3>Assemblez les éléments</h3>
+            <p>Configurez la voix neuronale, sélectionnez le style visuel, personnalisez les sous-titres et choisissez la musique de fond.</p>
+            <div class="step-micro-preview">
+              <span style="color:var(--accent-emerald);">Voix :</span> Thomas • <span style="color:var(--accent-cyan);">Sous-titres :</span> MrBeast
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card">
+            <div class="step-number-badge">4</div>
+            <h3>Prévisualisez et exportez</h3>
+            <p>Vérifiez le rendu en temps réel dans le studio de montage, appliquez vos ajustements et téléchargez votre fichier MP4.</p>
+            <div class="step-micro-preview">
+              <span style="color:#FFFFFF;">Export :</span> 1080p Full HD • Sans filigrane
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5 — VIDEO CREATION SHOWCASE
+         ==================================================================== -->
+    <section class="section-padding" id="exemples">
+      <div class="landing-container">
+        
+        <div class="section-header-center">
+          <span class="section-eyebrow">Une plateforme. Des possibilités infinies de création.</span>
+          <h2 class="section-title">Découvrez ce que vous pouvez créer avec VYDEORA</h2>
+          <p class="section-subtitle">Explorez des exemples de créations adaptées aux algorithmes des réseaux sociaux et aux formats longs.</p>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="showcase-filters">
+          <button class="filter-chip active" data-category="all">Tous les formats</button>
+          <button class="filter-chip" data-category="tiktok">TikTok & Reels</button>
+          <button class="filter-chip" data-category="business">Business & PME</button>
+          <button class="filter-chip" data-category="education">Éducation & Cours</button>
+          <button class="filter-chip" data-category="motivation">Motivation & Esprit</button>
+        </div>
+
+        <!-- Showcase Grid -->
+        <div class="showcase-grid">
+          
+          <!-- Card 1 -->
+          <div class="showcase-card" data-category="tiktok" data-title="5 conseils pour réussir sur TikTok" data-category-label="TikTok & Reels" data-desc="Vidéo courte dynamique au format vertical 9:16 avec sous-titres animés mot à mot et visuels rythmés.">
+            <div class="showcase-media">
+              <img src="assets/images/creator-card.jpg" alt="Exemple TikTok">
+              <span class="showcase-aspect-pill">9:16 Vertical</span>
+            </div>
+            <div class="showcase-body">
+              <span class="showcase-category">TikTok & Reels</span>
+              <h3 class="showcase-title">5 conseils pour réussir sur TikTok</h3>
+              <p class="showcase-desc">Accroche percutante en 3 secondes, voix off énergique et sous-titres animés.</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="showcase-card" data-category="business" data-title="Marketing digital pour débutants" data-category-label="Business & PME" data-desc="Présentation pédagogique au format paysage 16:9 adaptée aux chaînes YouTube et présentations d'entreprises.">
+            <div class="showcase-media">
+              <img src="assets/images/business.jpg" alt="Exemple Business">
+              <span class="showcase-aspect-pill">16:9 Paysage</span>
+            </div>
+            <div class="showcase-body">
+              <span class="showcase-category">Business & PME</span>
+              <h3 class="showcase-title">Marketing digital pour débutants</h3>
+              <p class="showcase-desc">Graphiques clairs, ton professionnel posé et démonstration structurée.</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="showcase-card" data-category="motivation" data-title="Motivation du lundi : Le secret des champions" data-category-label="Motivation" data-desc="Contenu d'inspiration captivant avec voix grave chaleureuse et plans panoramiques épiques.">
+            <div class="showcase-media">
+              <img src="assets/images/motivation.jpg" alt="Exemple Motivation">
+              <span class="showcase-aspect-pill">9:16 Vertical</span>
+            </div>
+            <div class="showcase-body">
+              <span class="showcase-category">Motivation & Mindset</span>
+              <h3 class="showcase-title">Motivation du lundi : Le secret</h3>
+              <p class="showcase-desc">Citations inspirantes, musique cinématique et montage émotionnel.</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="showcase-card" data-category="education" data-title="L'art d'enseigner et de transmettre en ligne" data-category-label="Éducation" data-desc="Module éducatif synthétique avec décomposition de concepts complexes en étapes faciles.">
+            <div class="showcase-media">
+              <img src="assets/images/education.jpg" alt="Exemple Éducation">
+              <span class="showcase-aspect-pill">16:9 Paysage</span>
+            </div>
+            <div class="showcase-body">
+              <span class="showcase-category">Éducation & Formation</span>
+              <h3 class="showcase-title">L'art d'enseigner en ligne</h3>
+              <p class="showcase-desc">Idéal pour les formateurs, cours en ligne et micro-apprentissages.</p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="showcase-card" data-category="tiktok" data-title="Voyage en Afrique : L'éveil de la savane" data-category-label="Documentaire & Aventure" data-desc="Récit de voyage immersif au format carré avec voix de narrateur documentaire et visuels animaliers 4K.">
+            <div class="showcase-media">
+              <img src="assets/images/lion.jpg" alt="Exemple Safari">
+              <span class="showcase-aspect-pill">1:1 Carré</span>
+            </div>
+            <div class="showcase-body">
+              <span class="showcase-category">Documentaire & Nature</span>
+              <h3 class="showcase-title">Voyage en Afrique : La savane</h3>
+              <p class="showcase-desc">Format immersif idéal pour Instagram et Facebook.</p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="showcase-card" data-category="business" data-title="3D Cyberpunk & Technologies du futur" data-category-label="Tech & Innovation" data-desc="Vidéo conceptuelle avec rendus 3D futuristes, effets néons et musique électronique.">
+            <div class="showcase-media">
+              <img src="assets/images/hero-laptop.jpg" alt="Exemple Tech">
+              <span class="showcase-aspect-pill">16:9 Paysage</span>
+            </div>
+            <div class="showcase-body">
+              <span class="showcase-category">Tech & Innovation</span>
+              <h3 class="showcase-title">Technologies du futur</h3>
+              <p class="showcase-desc">Présentation de produits digitaux, SaaS et innovations numériques.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6 — FEATURE HIGHLIGHTS (ALTERNATING ROWS)
+         ==================================================================== -->
+    <section class="section-padding" id="fonctionnalites">
+      <div class="landing-container">
+        
+        <div class="section-header-center">
+          <span class="section-eyebrow">Fonctionnalités avancées</span>
+          <h2 class="section-title">Une suite d'outils pensée pour la performance créative</h2>
+          <p class="section-subtitle">Chaque fonctionnalité a été conçue pour maximiser l'engagement de votre audience tout en simplifiant votre quotidien.</p>
+        </div>
+
+        <!-- Feature 1: Assistant de Script IA -->
+        <div class="feature-row">
+          <div class="feature-content">
+            <span class="feature-tag">Écriture intelligente</span>
+            <h3>Assistant de script IA & accroches testées</h3>
+            <p>Générez des scripts structurés à partir d'une simple phrase d'accroche. L'IA rédige des scénarios rythmés avec des formulations éprouvées pour retenir l'attention dès les 3 premières secondes.</p>
+            <div class="feature-check-list">
+              <div class="feature-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Génération d'accroches percutantes (hooks)</span>
+              </div>
+              <div class="feature-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Découpage automatique scène par scène</span>
+              </div>
+              <div class="feature-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Édition libre du texte avant la génération</span>
+              </div>
+            </div>
+          </div>
+          <div class="feature-visual-box">
+            <img src="assets/images/hero-laptop.jpg" alt="Assistant Script IA VYDEORA">
+          </div>
+        </div>
+
+        <!-- Feature 2: Voix neuronales & Sous-titres dynamiques -->
+        <div class="feature-row reverse">
+          <div class="feature-content">
+            <span class="feature-tag">Audio & Accessibilité</span>
+            <h3>Voix off neuronales & sous-titrage mot à mot</h3>
+            <p>Donnez vie à vos récits avec des voix de synthèse ultra-réalistes dotées d'inflexions naturelles. Les sous-titres sont automatiquement transcrits et animés au rythme exact de la parole.</p>
+            <div class="feature-check-list">
+              <div class="feature-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Plus de 50 voix humaines sans intonation robotique</span>
+              </div>
+              <div class="feature-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Styles de sous-titres tendance (MrBeast, Karaoké, Minimaliste)</span>
+              </div>
+              <div class="feature-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Bandes-son libres de droits avec égalisation automatique</span>
+              </div>
+            </div>
+          </div>
+          <div class="feature-visual-box">
+            <img src="assets/images/creator-card.jpg" alt="Voix off et sous-titres IA">
+          </div>
+        </div>
+
+        <!-- Feature 3: Studio de montage & Chronologie -->
+        <div class="feature-row">
+          <div class="feature-content">
+            <span class="feature-tag">Studio de montage</span>
+            <h3>Chronologie multipistes & contrôle créatif</h3>
+            <p>Ajustez vos séquences dans un studio de montage pensé pour la précision. Déplacez vos scènes, modifiez les durées et commutez entre les ratios 16:9, 9:16 et 1:1 en un clic.</p>
+            <div class="feature-check-list">
+              <div class="feature-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pistes vidéo, voix, sous-titres et musique séparées</span>
+              </div>
+              <div class="feature-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Prévisualisation réactive en haute résolution</span>
+              </div>
+              <div class="feature-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Exportation MP4 1080p et 4K sans compression dégradante</span>
+              </div>
+            </div>
+          </div>
+          <div class="feature-visual-box">
+            <img src="assets/images/business.jpg" alt="Chronologie multipiste de montage">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7 — PRODUCT INTERFACE PREVIEW
+         ==================================================================== -->
+    <section class="section-padding" id="interface" style="background:rgba(11, 20, 38, 0.4); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+      <div class="landing-container">
+        
+        <div class="section-header-center">
+          <span class="section-eyebrow">Aperçu direct de l'application</span>
+          <h2 class="section-title">Une interface conçue pour les créateurs exigeants</h2>
+          <p class="section-subtitle">Découvrez l'espace de création de VYDEORA tel qu'il apparaît dans votre compte une fois connecté.</p>
+        </div>
+
+        <div class="interface-showcase-box">
+          <img src="assets/images/dashboard-reference.jpg" alt="Tableau de bord complet VYDEORA" loading="lazy">
+        </div>
+
+        <div style="text-align:center;">
+          <a href="/app" class="btn btn-primary btn-lg">
+            <span>Explorer le tableau de bord en direct</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8 — WHO IS VYDEORA FOR?
+         ==================================================================== -->
+    <section class="section-padding" id="pour-qui">
+      <div class="landing-container">
+        
+        <div class="section-header-center">
+          <span class="section-eyebrow">Cas d'usage ciblés</span>
+          <h2 class="section-title">Pour qui VYDEORA est-il fait ?</h2>
+          <p class="section-subtitle">Que vous débutiez ou que vous publiiez plusieurs vidéos par jour, notre plateforme s'adapte à vos objectifs de production.</p>
+        </div>
+
+        <div class="audience-grid">
+          <!-- Audience 1 -->
+          <div class="audience-card">
+            <div class="value-icon-box" style="background:rgba(239, 68, 68, 0.15); color:#F87171;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+            </div>
+            <h3>Créateurs YouTube Faceless</h3>
+            <p>Développez des chaînes thématiques complètes (histoire, tech, finance, voyage) sans jamais avoir à investir dans une caméra ni vous filmer.</p>
+          </div>
+
+          <!-- Audience 2 -->
+          <div class="audience-card">
+            <div class="value-icon-box" style="background:rgba(168, 85, 247, 0.15); color:#C084FC;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h3>Créateurs TikTok & Reels</h3>
+            <p>Multipliez vos publications courtes grâce à un formatage vertical 9:16 natif et des sous-titres animés pensés pour la rétention mobile.</p>
+          </div>
+
+          <!-- Audience 3 -->
+          <div class="audience-card">
+            <div class="value-icon-box" style="background:rgba(53, 200, 245, 0.15); color:#35C8F5;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <h3>Entrepreneurs & PME</h3>
+            <p>Concevez des publicités vidéo percutantes, des démonstrations produits et des vidéos d'explication sans recourir à une agence coûteuse.</p>
+          </div>
+
+          <!-- Audience 4 -->
+          <div class="audience-card">
+            <div class="value-icon-box" style="background:rgba(16, 185, 129, 0.15); color:#34D399;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path></svg>
+            </div>
+            <h3>Formateurs & Éditeurs</h3>
+            <p>Transformez vos cours écrits, articles de blog et synthèses documentaires en leçons vidéo claires et facilement mémorisables.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 9 — PRICING
+         ==================================================================== -->
+    <section class="section-padding" id="tarifs">
+      <div class="landing-container">
+        
+        <div class="section-header-center">
+          <span class="section-eyebrow">Des forfaits clairs et transparents</span>
+          <h2 class="section-title">Des tarifs simples, adaptés à chaque créateur</h2>
+          <p class="section-subtitle">Démarrez gratuitement pour tester vos premières idées, puis évoluez au rythme de votre production. Sans engagement.</p>
+        </div>
+
+        <!-- Monthly / Annual Toggle Switch -->
+        <div class="pricing-toggle-wrap">
+          <span class="toggle-label active" id="monthlyLabel">Facturation mensuelle</span>
+          <div class="switch-toggle" id="billingSwitch" role="button" aria-label="Basculer entre facturation mensuelle et annuelle">
+            <div class="switch-toggle-knob"></div>
+          </div>
+          <span class="toggle-label" id="annualLabel">Facturation annuelle</span>
+          <span class="discount-badge">Économisez 20%</span>
+        </div>
+
+        <!-- Pricing Cards Grid -->
+        <div class="pricing-grid">
+          
+          <!-- Plan 1: Gratuit -->
+          <div class="pricing-card">
+            <h3 class="plan-name">Gratuit</h3>
+            <div class="plan-price-wrap">
+              <span class="plan-price-num" id="price-free">0</span>
+              <span style="font-size:1.4rem; font-weight:700;">$</span>
+              <span class="plan-price-period" id="period-free">/mois</span>
+            </div>
+            <p class="plan-desc">Pour tester les fonctionnalités et générer votre première vidéo sans carte bancaire.</p>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>100 crédits de bienvenue</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Accès au studio de script IA</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Jusqu'à 2 projets sauvegardés</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Export en 720p HD standard</span>
+              </li>
+            </ul>
+            <button class="btn btn-secondary" data-auth-trigger="signup" style="width:100%; justify-content:center;">Commencer gratuitement</button>
+          </div>
+
+          <!-- Plan 2: Starter -->
+          <div class="pricing-card">
+            <h3 class="plan-name">Starter</h3>
+            <div class="plan-price-wrap">
+              <span class="plan-price-num" id="price-starter">12</span>
+              <span style="font-size:1.4rem; font-weight:700;">$</span>
+              <span class="plan-price-period" id="period-starter">/mois</span>
+            </div>
+            <p class="plan-desc">Pour les créateurs occasionnels souhaitant un rendu net sans filigrane.</p>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>300 crédits mensuels (~5 min)</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Exports 1080p Full HD</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Sans filigrane VYDEORA</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Accès aux voix standard</span>
+              </li>
+            </ul>
+            <button class="btn btn-outline" data-auth-trigger="signup" style="width:100%; justify-content:center;">Choisir Starter</button>
+          </div>
+
+          <!-- Plan 3: Créateur (Recommandé) -->
+          <div class="pricing-card featured">
+            <span class="featured-plan-badge">Le plus populaire</span>
+            <h3 class="plan-name">Créateur</h3>
+            <div class="plan-price-wrap">
+              <span class="plan-price-num" id="price-creator">29</span>
+              <span style="font-size:1.4rem; font-weight:700;">$</span>
+              <span class="plan-price-period" id="period-creator">/mois</span>
+            </div>
+            <p class="plan-desc">Le choix recommandé pour publier régulièrement sur YouTube, TikTok et Reels.</p>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>1 000 crédits mensuels (~16 min)</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Rendu 1080p 60 FPS ultra-fluide</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Toutes les voix neuronales premium</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Styles de sous-titres personnalisés</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Support prioritaire par email</span>
+              </li>
+            </ul>
+            <button class="btn btn-primary" data-auth-trigger="signup" style="width:100%; justify-content:center;">Choisir Créateur</button>
+          </div>
+
+          <!-- Plan 4: Pro -->
+          <div class="pricing-card">
+            <h3 class="plan-name">Pro</h3>
+            <div class="plan-price-wrap">
+              <span class="plan-price-num" id="price-pro">59</span>
+              <span style="font-size:1.4rem; font-weight:700;">$</span>
+              <span class="plan-price-period" id="period-pro">/mois</span>
+            </div>
+            <p class="plan-desc">Pour les créateurs avancés nécessitant un volume élevé et une résolution 4K.</p>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>2 500 crédits mensuels (~40 min)</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Rendu 4K Ultra HD</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Traitement GPU accéléré</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Projets et templates illimités</span>
+              </li>
+            </ul>
+            <button class="btn btn-outline" data-auth-trigger="signup" style="width:100%; justify-content:center;">Choisir Pro</button>
+          </div>
+
+          <!-- Plan 5: Entreprise -->
+          <div class="pricing-card">
+            <h3 class="plan-name">Entreprise</h3>
+            <div class="plan-price-wrap">
+              <span class="plan-price-num" id="price-enterprise">149</span>
+              <span style="font-size:1.4rem; font-weight:700;">$</span>
+              <span class="plan-price-period" id="period-enterprise">/mois</span>
+            </div>
+            <p class="plan-desc">Pour les agences, studios et équipes marketing collaboratives.</p>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>7 500 crédits mensuels (~120 min)</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Espace d'équipe multi-utilisateurs</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Accès API & Webhooks</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Gestionnaire de compte dédié</span>
+              </li>
+            </ul>
+            <button class="btn btn-outline" data-auth-trigger="signup" style="width:100%; justify-content:center;">Contacter l'équipe</button>
+          </div>
+
+        </div>
+
+        <!-- Transparency Note -->
+        <div class="pricing-transparency-note">
+          💡 <strong>Fonctionnement transparent des crédits :</strong> 1 crédit correspond approximativement à 1 seconde de vidéo générée. Les forfaits sont sans engagement : vous pouvez annuler, mettre en pause ou modifier votre formule en un clic à tout moment depuis votre tableau de bord.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 10 — TRANSPARENT PRODUCT DEMONSTRATION
+         ==================================================================== -->
+    <section class="section-padding" style="background:rgba(11, 20, 38, 0.4); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+      <div class="landing-container">
+        
+        <div class="section-header-center">
+          <span class="section-eyebrow">Démonstration concrète</span>
+          <h2 class="section-title">D'une simple idée à une vidéo prête à diffuser</h2>
+          <p class="section-subtitle">Visualisez exactement comment vos informations brutes sont traitées pour devenir une création audiovisuelle complète.</p>
+        </div>
+
+        <div class="demo-workflow-grid">
+          <!-- INPUT -->
+          <div class="demo-step-box">
+            <span class="demo-step-tag demo-tag-input">1. ENTRÉE (VOTRE IDÉE)</span>
+            <h4 style="color:#FFFFFF; font-size:1.05rem;">Saisie de votre prompt</h4>
+            <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:var(--border-radius-sm); padding:14px; font-size:0.85rem; color:#E2E8F0; line-height:1.5;">
+              "Explique pourquoi 90% des débutants échouent en marketing digital, avec 3 leçons concrètes pour surmonter le syndrome de l'imposteur."
+            </div>
+            <p style="font-size:0.82rem; color:var(--text-muted);">Saisie en langage naturel sans code ni mise en forme spéciale requise.</p>
+          </div>
+
+          <!-- PROCESS -->
+          <div class="demo-step-box" style="border-color:rgba(139, 92, 246, 0.35);">
+            <span class="demo-step-tag demo-tag-process">2. TRAITEMENT IA EN ~20 SECONDES</span>
+            <h4 style="color:#FFFFFF; font-size:1.05rem;">Synthèse & Génération</h4>
+            <div style="display:flex; flex-direction:column; gap:8px; font-size:0.82rem;">
+              <div style="display:flex; justify-content:space-between; padding:6px 10px; background:rgba(255,255,255,0.02); border-radius:4px;">
+                <span>Structure narrative</span>
+                <span style="color:var(--accent-emerald);">✔ 3 scènes découpées</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; padding:6px 10px; background:rgba(255,255,255,0.02); border-radius:4px;">
+                <span>Synthèse vocale neuronale</span>
+                <span style="color:var(--accent-emerald);">✔ Voix Thomas (FR)</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; padding:6px 10px; background:rgba(255,255,255,0.02); border-radius:4px;">
+                <span>Sous-titres mot à mot</span>
+                <span style="color:var(--accent-emerald);">✔ Synchronisation 100%</span>
+              </div>
+            </div>
+            <p style="font-size:0.82rem; color:var(--text-muted);">Contrôle de conformité et encodage automatique.</p>
+          </div>
+
+          <!-- OUTPUT -->
+          <div class="demo-step-box">
+            <span class="demo-step-tag demo-tag-output">3. RÉSULTAT FINAL (VIDÉO MP4)</span>
+            <h4 style="color:#FFFFFF; font-size:1.05rem;">Prête au téléchargement</h4>
+            <div style="border-radius:var(--border-radius-sm); overflow:hidden; aspect-ratio:16/9; position:relative;">
+              <img src="assets/images/business.jpg" alt="Vidéo finale générée" style="width:100%; height:100%; object-fit:cover;">
+              <div style="position:absolute; bottom:8px; right:8px; background:rgba(0,0,0,0.85); font-size:0.75rem; padding:2px 8px; border-radius:4px; font-weight:700;">
+                0:45 • 1080p
+              </div>
+            </div>
+            <p style="font-size:0.82rem; color:var(--text-muted);">Fichier vidéo exportable directement au format MP4 universel.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 11 — TRUST AND TRANSPARENCY
+         ==================================================================== -->
+    <section class="section-padding">
+      <div class="landing-container">
+        
+        <div class="section-header-center">
+          <span class="section-eyebrow">Sécurité & Engagements</span>
+          <h2 class="section-title">Construit sur des principes de transparence</h2>
+          <p class="section-subtitle">Pas de promesses irréalistes ni de conditions cachées. Voici nos engagements formels.</p>
+        </div>
+
+        <div class="trust-grid">
+          <!-- Pillar 1 -->
+          <div class="trust-card">
+            <div class="value-icon-box" style="background:rgba(16, 185, 129, 0.15); color:#34D399;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Propriété totale de vos vidéos</h3>
+            <p>Vous conservez l'entière propriété intellectuelle sur vos scripts et sur les fichiers vidéo générés. Exploitation commerciale libre.</p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="trust-card">
+            <div class="value-icon-box" style="background:rgba(53, 200, 245, 0.15); color:#35C8F5;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            </div>
+            <h3>Remboursement des crédits</h3>
+            <p>Si une génération échoue en raison d'un problème technique serveur, vos crédits sont automatiquement recrédités sur votre solde.</p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="trust-card">
+            <div class="value-icon-box" style="background:rgba(168, 85, 247, 0.15); color:#C084FC;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <h3>Chiffrement et protection des données</h3>
+            <p>Vos projets et fichiers sont chiffrés en transit (TLS 1.3) et au repos avec des standards bancaires de sécurité.</p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="trust-card">
+            <div class="value-icon-box" style="background:rgba(236, 72, 153, 0.15); color:#F472B6;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            </div>
+            <h3>Annulation en 1 clic</h3>
+            <p>Aucun engagement de durée sur les formules mensuelles. Désactivez votre renouvellement à tout moment depuis votre tableau de bord.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 12 — FREQUENTLY ASKED QUESTIONS
+         ==================================================================== -->
+    <section class="section-padding" id="faq" style="background:rgba(11, 20, 38, 0.4); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+      <div class="landing-container">
+        
+        <div class="section-header-center">
+          <span class="section-eyebrow">Foire aux questions</span>
+          <h2 class="section-title">Tout ce que vous devez savoir avant de commencer</h2>
+          <p class="section-subtitle">Consultez les réponses directes à l'ensemble de vos questions techniques et commerciales.</p>
+        </div>
+
+        <div class="faq-list">
+          
+          <!-- Q1 -->
+          <div class="faq-item open">
+            <button class="faq-question">
+              <span>1. Qu'est-ce que VYDEORA exactement ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>VYDEORA est une plateforme SaaS de création vidéo assistée par intelligence artificielle, spécialement optimisée pour la création de vidéos sans caméra (« faceless ») pour YouTube, TikTok, Instagram Reels et Facebook Reels. Elle regroupe dans un même espace la rédaction du script, la voix off neuronale, le sous-titrage dynamique et le montage automatisé.</p>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>2. Puis-je créer des vidéos sans jamais montrer mon visage ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>Oui, c'est le cœur même de notre plateforme. VYDEORA produit des vidéos complètes à partir de visuels générés par IA ou issus de notre médiathèque, accompagnés d'une voix off synthétique naturelle et de sous-titres animés. Vous n'avez jamais besoin d'apparaître à l'écran.</p>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>3. Comment fonctionne concrètement la création vidéo avec l'IA ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>Vous indiquez votre idée ou collez votre script. Notre moteur IA décompose le sujet en séquences cohérentes, génère les visuels appropriés, effectue la synthèse vocale avec des intonations réalistes et synchronise chaque mot avec les sous-titres. Vous pouvez ensuite prévisualiser et éditer le résultat avant l'exportation finale.</p>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>4. Dois-je avoir des compétences préalables en montage vidéo ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>Non, aucune compétence technique n'est nécessaire. L'interface a été conçue pour être accessible dès la première minute. Les découpages, transitions, niveaux sonores et synchronisations de sous-titres sont gérés automatiquement par le système.</p>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>5. Puis-je concevoir des vidéos pour TikTok et YouTube Shorts ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>Absolument. Le format vertical 9:16 est pleinement supporté avec des styles de sous-titres animés mot à mot (façon MrBeast ou Alex Hormozi) et un rythme rapide spécifiquement optimisé pour retenir l'attention des utilisateurs mobiles.</p>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>6. Est-il possible de produire des vidéos longues pour YouTube ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>Oui, vous pouvez créer des vidéos au format paysage standard 16:9 de plusieurs minutes grâce à notre découpage multipistes par scènes, idéal pour les vidéos explicatives, les récits documentaires et les tutoriels.</p>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>7. Quelles sont les langues prises en charge ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>VYDEORA prend en charge le français, l'anglais, l'espagnol, l'allemand, l'italien, le portugais et plus de 20 autres langues avec des accents régionaux naturels et des voix féminines et masculines variées.</p>
+            </div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>8. Que sont exactement les crédits IA et comment sont-ils décomptés ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>Les crédits représentent l'unité de calcul GPU consommée lors de la synthèse vocale et du rendu vidéo. En règle générale, 1 crédit correspond environ à 1 seconde de vidéo générée. Le solde de vos crédits est visible en temps réel sur votre tableau de bord.</p>
+            </div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>9. Que se passe-t-il lorsque mes crédits mensuels sont épuisés ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>Vos projets et vidéos existants restent toujours accessibles en consultation et en téléchargement. Pour générer de nouvelles vidéos, vous pouvez recharger un pack de crédits ponctuels ou passer à la formule supérieure sans frais de dossier.</p>
+            </div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>10. Puis-je télécharger mes vidéos terminées sur mon ordinateur ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>Oui, dès que le rendu est terminé, vous pouvez télécharger directement le fichier MP4 haute définition (1080p ou 4K selon votre abonnement) sans aucune restriction.</p>
+            </div>
+          </div>
+
+          <!-- Q11 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>11. Comment puis-je annuler mon abonnement ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>L'annulation se fait en un seul clic depuis la section « Mon abonnement » de votre espace utilisateur. Vos accès et crédits restants demeurent actifs jusqu'à la fin de la période de facturation en cours.</p>
+            </div>
+          </div>
+
+          <!-- Q12 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>12. Puis-je exploiter les vidéos générées à des fins commerciales ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>Oui. Dès les formules payantes (Starter, Créateur, Pro, Entreprise), toutes vos vidéos sont libres de droits commerciaux. Vous pouvez monétiser vos chaînes YouTube, diffuser vos annonces payantes ou vendre vos créations à vos clients.</p>
+            </div>
+          </div>
+
+          <!-- Q13 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>13. La publication automatique sur les réseaux sociaux est-elle disponible ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>Cette fonctionnalité est actuellement en cours de développement et fait partie de notre feuille de route produit. Pour le moment, vous téléchargez votre fichier MP4 optimisé et le publiez manuellement ou via vos outils de planification habituels.</p>
+            </div>
+          </div>
+
+          <!-- Q14 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>14. Comment contacter le support en cas de question ou de besoin technique ?</span>
+              <div class="faq-toggle-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <p>Notre équipe technique est joignable directement par email depuis la rubrique « Aide & support » du tableau de bord ou par chat pour les membres des formules Créateur, Pro et Entreprise.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 13 — FINAL CONVERSION CTA
+         ==================================================================== -->
+    <section class="final-cta-section">
+      <div class="landing-container">
+        <div class="final-cta-card">
+          <div class="hero-tag-badge" style="margin-bottom:0;">
+            <span>Votre prochain succès vidéo</span>
+          </div>
+          <h2>Votre prochaine vidéo commence par une idée.</h2>
+          <p>Rejoignez les créateurs qui produisent des vidéos captivantes sans caméra et sans complexité technique grâce à VYDEORA.</p>
+          <div class="final-cta-btn-group">
+            <button class="btn btn-primary btn-lg" data-auth-trigger="signup">
+              <span>Créer ma première vidéo</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <a href="#tarifs" class="btn btn-secondary btn-lg">
+              <span>Découvrir les offres</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       SECTION 14 — FOOTER
+       ====================================================================== -->
+  <footer class="landing-footer">
+    <div class="landing-container">
+      <div class="footer-grid">
+        
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <img src="assets/images/logo-icon.png" alt="VYDEORA" width="32" height="32">
+            <span style="font-weight:800; font-size:1.3rem; color:#FFFFFF;">VYDEORA</span>
+          </div>
+          <p class="footer-desc">La plateforme tout-en-un de création vidéo assistée par intelligence artificielle pour les créateurs de contenu sans visage.</p>
+        </div>
+
+        <!-- Col 1: Produit -->
+        <div>
+          <div class="footer-col-title">Produit</div>
+          <ul class="footer-links-list">
+            <li><a href="#fonctionnalites" class="footer-link">Fonctionnalités</a></li>
+            <li><a href="#comment-ca-marche" class="footer-link">Comment ça marche</a></li>
+            <li><a href="#exemples" class="footer-link">Exemples de vidéos</a></li>
+            <li><a href="#tarifs" class="footer-link">Tarifs & Forfaits</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Compte -->
+        <div>
+          <div class="footer-col-title">Compte</div>
+          <ul class="footer-links-list">
+            <li><a href="#" class="footer-link" data-auth-trigger="login">Se connecter</a></li>
+            <li><a href="#" class="footer-link" data-auth-trigger="signup">Créer un compte</a></li>
+            <li><a href="/app" class="footer-link">Accéder au tableau de bord</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Ressources -->
+        <div>
+          <div class="footer-col-title">Ressources</div>
+          <ul class="footer-links-list">
+            <li><a href="#faq" class="footer-link">Centre d'aide & FAQ</a></li>
+            <li><a href="/app#aide" class="footer-link">Support technique</a></li>
+            <li><a href="#interface" class="footer-link">Documentation</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Légal -->
+        <div>
+          <div class="footer-col-title">Légal</div>
+          <ul class="footer-links-list">
+            <li><a href="#faq" class="footer-link">Conditions d'utilisation</a></li>
+            <li><a href="#faq" class="footer-link">Politique de confidentialité</a></li>
+            <li><a href="#faq" class="footer-link">Politique d'annulation</a></li>
+            <li><a href="#faq" class="footer-link">Mentions légales</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 VYDEORA Inc. Tous droits réservés.</span>
+        <span>Conçu avec rigueur pour les créateurs de nouvelle génération.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       MODALS: AUTHENTICATION & VIDEO SHOWCASE DEMO
+       ====================================================================== -->
+
+  <!-- Authentication Modal (Login / Sign Up) -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-box" style="max-width:440px;">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <img src="assets/images/logo-icon.png" alt="VYDEORA" width="24" height="24">
+          <span style="font-weight:800; font-size:1rem; color:#FFFFFF;">VYDEORA</span>
+        </div>
+        <button class="modal-close-btn" id="authModalClose" aria-label="Fermer">✕</button>
+      </div>
+
+      <div class="modal-body" style="padding:20px 24px;">
+        <!-- Tabs -->
+        <div class="auth-tabs-row">
+          <div class="auth-tab-btn" id="tabLogin">Se connecter</div>
+          <div class="auth-tab-btn active" id="tabSignup">Créer un compte</div>
+        </div>
+
+        <!-- Sign Up Form -->
+        <form id="signupForm" style="display:flex; flex-direction:column; gap:12px;">
+          <div id="signupError" style="display:none; background:rgba(239, 68, 68, 0.15); border:1px solid rgba(239, 68, 68, 0.35); color:#FCA5A5; padding:10px 12px; border-radius:8px; font-size:0.82rem; line-height:1.4;"></div>
+          <div>
+            <label for="signupFullName" style="display:block; font-size:0.82rem; font-weight:600; margin-bottom:6px;">Nom complet :</label>
+            <input type="text" id="signupFullName" name="fullName" required placeholder="Alex Martin" style="width:100%; padding:10px;">
+          </div>
+          <div>
+            <label for="signupEmail" style="display:block; font-size:0.82rem; font-weight:600; margin-bottom:6px;">Adresse e-mail :</label>
+            <input type="email" id="signupEmail" name="email" required placeholder="alex@exemple.com" style="width:100%; padding:10px;">
+          </div>
+          <div>
+            <label for="signupPassword" style="display:block; font-size:0.82rem; font-weight:600; margin-bottom:6px;">Mot de passe :</label>
+            <input type="password" id="signupPassword" name="password" required minlength="8" placeholder="Au moins 8 caractères" style="width:100%; padding:10px;">
+          </div>
+          <div>
+            <label for="signupPasswordConfirm" style="display:block; font-size:0.82rem; font-weight:600; margin-bottom:6px;">Confirmer le mot de passe :</label>
+            <input type="password" id="signupPasswordConfirm" name="passwordConfirm" required minlength="8" placeholder="Retapez votre mot de passe" style="width:100%; padding:10px;">
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:8px; margin-top:2px;">
+            <input type="checkbox" id="signupTerms" name="terms" required style="margin-top:3px; accent-color:var(--primary); cursor:pointer;">
+            <label for="signupTerms" style="font-size:0.78rem; color:var(--text-secondary); cursor:pointer; line-height:1.4;">
+              J'accepte les <a href="#conditions" style="color:var(--primary-light); text-decoration:underline;">conditions d'utilisation</a> et la <a href="#confidentialite" style="color:var(--primary-light); text-decoration:underline;">politique de confidentialité</a>.
+            </label>
+          </div>
+          <button type="submit" id="signupSubmitBtn" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:6px;">
+            <span>Créer mon compte (100 crédits offerts)</span>
+          </button>
+        </form>
+
+        <!-- Log In Form -->
+        <form id="loginForm" style="display:none; flex-direction:column; gap:12px;">
+          <div id="loginError" style="display:none; background:rgba(239, 68, 68, 0.15); border:1px solid rgba(239, 68, 68, 0.35); color:#FCA5A5; padding:10px 12px; border-radius:8px; font-size:0.82rem; line-height:1.4;"></div>
+          <div>
+            <label for="loginEmail" style="display:block; font-size:0.82rem; font-weight:600; margin-bottom:6px;">Adresse e-mail :</label>
+            <input type="email" id="loginEmail" name="email" required placeholder="alex@vydeora.com" style="width:100%; padding:10px;">
+          </div>
+          <div>
+            <label for="loginPassword" style="display:block; font-size:0.82rem; font-weight:600; margin-bottom:6px;">Mot de passe :</label>
+            <input type="password" id="loginPassword" name="password" required placeholder="••••••••" style="width:100%; padding:10px;">
+          </div>
+          <button type="submit" id="loginSubmitBtn" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:6px;">
+            <span>Se connecter au tableau de bord</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Showcase Video Demo Modal -->
+  <div class="modal-overlay" id="demoModal">
+    <div class="modal-box" style="max-width:580px;">
+      <div class="modal-header">
+        <div>
+          <span id="demoModalCategory" style="font-size:0.75rem; font-weight:700; color:var(--accent-purple); text-transform:uppercase;"></span>
+          <h3 class="modal-title" id="demoModalTitle" style="font-size:1.1rem; margin-top:2px;"></h3>
+        </div>
+        <button class="modal-close-btn" id="demoModalClose" aria-label="Fermer">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="border-radius:var(--border-radius-md); overflow:hidden; aspect-ratio:16/9; position:relative; margin-bottom:14px; background:#000;">
+          <img id="demoModalImage" src="" alt="Aperçu vidéo" style="width:100%; height:100%; object-fit:cover;">
+          <div style="position:absolute; bottom:12px; left:12px; right:12px; background:rgba(0,0,0,0.7); backdrop-filter:blur(4px); padding:8px 12px; border-radius:6px; font-size:0.8rem; color:#FFFFFF;">
+            ▶ Démonstration de rendu IA VYDEORA
+          </div>
+        </div>
+        <p id="demoModalDesc" style="font-size:0.9rem; color:var(--text-secondary); line-height:1.55; margin-bottom:18px;"></p>
+        <button class="btn btn-primary" data-auth-trigger="signup" style="width:100%; justify-content:center;">
+          <span>Créer une vidéo similaire avec l'IA</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Interaction Scripts -->
+  <script src="js/landing.js"></script>
+</body>
+</html>
